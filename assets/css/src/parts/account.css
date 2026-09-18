@@ -1,0 +1,154 @@
+/* My Account area. */
+@layer components {
+
+	.dz-account {
+		display: grid;
+		gap: 1.5rem;
+		padding-block: 1.5rem 3rem;
+	}
+
+	@media (min-width: 900px) {
+		.dz-account {
+			align-items: start;
+			gap: 2.5rem;
+			grid-template-columns: 15rem minmax(0, 1fr);
+		}
+	}
+
+	.dz-account-nav ul {
+		border: 1px solid var(--color-ink-200);
+		border-radius: var(--radius-card);
+		list-style: none;
+		margin: 0;
+		overflow: hidden;
+		padding: 0;
+	}
+
+	.dz-account-nav li + li {
+		border-top: 1px solid var(--color-ink-100);
+	}
+
+	.dz-account-nav a {
+		align-items: center;
+		color: var(--color-ink-700);
+		display: flex;
+		font-size: 0.875rem;
+		font-weight: 550;
+		gap: 0.625rem;
+		padding: 0.75rem 0.875rem;
+		text-decoration: none;
+	}
+
+	.dz-account-nav a:hover {
+		background: var(--color-ink-50);
+		color: var(--color-ink-900);
+	}
+
+	.dz-account-nav .is-active a {
+		background: var(--color-ink-900);
+		color: #fff;
+	}
+
+	.dz-account-nav__icon {
+		color: var(--color-ink-400);
+		width: 1rem;
+	}
+
+	.dz-account-nav .is-active .dz-account-nav__icon {
+		color: #fff;
+	}
+
+	.dz-account-intro {
+		color: var(--color-ink-500);
+		font-size: 0.875rem;
+	}
+
+	.dz-account-cards {
+		display: grid;
+		gap: 1rem;
+		grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+		margin-top: 1.5rem;
+	}
+
+	.dz-account-card {
+		border: 1px solid var(--color-ink-200);
+		border-radius: var(--radius-card);
+		padding: 1rem;
+	}
+
+	.dz-account-card__title {
+		font-size: 0.9375rem;
+		margin: 0 0 0.375rem;
+	}
+
+	.dz-account-card__text {
+		color: var(--color-ink-500);
+		font-size: 0.875rem;
+		margin: 0 0 0.75rem;
+	}
+
+	.dz-orders {
+		border: 1px solid var(--color-ink-200);
+		border-radius: var(--radius-card);
+		overflow: hidden;
+	}
+
+	.dz-order-row {
+		border-bottom: 1px solid var(--color-ink-100);
+		display: grid;
+		gap: 0.5rem 1rem;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		padding: 1rem;
+	}
+
+	@media (min-width: 768px) {
+		.dz-order-row {
+			align-items: center;
+			grid-template-columns: 7rem 9rem 8rem minmax(0, 1fr) auto;
+		}
+	}
+
+	.dz-order-row:last-child {
+		border-bottom: 0;
+	}
+
+	.dz-order-row__label {
+		color: var(--color-ink-500);
+		display: block;
+		font-size: var(--text-2xs);
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+	}
+
+	@media (min-width: 768px) {
+		.dz-order-row__label { display: none; }
+	}
+
+	.dz-order-status {
+		background: var(--color-ink-100);
+		border-radius: 3px;
+		color: var(--color-ink-700);
+		display: inline-block;
+		font-size: 0.75rem;
+		font-weight: 600;
+		padding: 0.25rem 0.5rem;
+	}
+
+	.dz-login-grid {
+		display: grid;
+		gap: 2rem;
+		padding-block: 1.5rem 3rem;
+	}
+
+	@media (min-width: 900px) {
+		.dz-login-grid {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+	}
+
+	.dz-login-card {
+		border: 1px solid var(--color-ink-200);
+		border-radius: var(--radius-card);
+		padding: 1.5rem;
+	}
+}

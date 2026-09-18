@@ -1,0 +1,421 @@
+/* Single product: gallery, summary column, compatibility, specs, tabs. */
+@layer components {
+
+	.dz-product {
+		display: grid;
+		gap: 1.5rem;
+		padding-block: 1.5rem;
+	}
+
+	@media (min-width: 1024px) {
+		.dz-product {
+			align-items: start;
+			gap: 3rem;
+			grid-template-columns: minmax(0, 1fr) minmax(0, 27rem);
+		}
+	}
+
+	/* --- Gallery ---------------------------------------------------------- */
+	.dz-gallery {
+		display: grid;
+		gap: 0.75rem;
+	}
+
+	.dz-gallery__stage {
+		background: #fff;
+		border: 1px solid var(--color-ink-200);
+		border-radius: var(--radius-card);
+		overflow: hidden;
+		position: relative;
+	}
+
+	.dz-gallery__image {
+		aspect-ratio: 4 / 3;
+		display: block;
+	}
+
+	.dz-gallery__image img {
+		height: 100%;
+		object-fit: contain;
+		padding: 1.5rem;
+		width: 100%;
+	}
+
+	.dz-gallery__image[hidden] {
+		display: none;
+	}
+
+	.dz-gallery__thumbs {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	.dz-gallery__thumb {
+		background: #fff;
+		border: 1px solid var(--color-ink-200);
+		border-radius: var(--radius-control);
+		cursor: pointer;
+		height: 4.5rem;
+		overflow: hidden;
+		padding: 0.25rem;
+		width: 4.5rem;
+	}
+
+	.dz-gallery__thumb img {
+		height: 100%;
+		object-fit: contain;
+		width: 100%;
+	}
+
+	.dz-gallery__thumb[aria-current="true"] {
+		border-color: var(--color-ink-900);
+	}
+
+	.dz-gallery__flags {
+		left: 0.75rem;
+		position: absolute;
+		top: 0.75rem;
+		z-index: 1;
+	}
+
+	/* --- Summary ---------------------------------------------------------- */
+	.dz-product__summary > * + * {
+		margin-top: 1.25rem;
+	}
+
+	.dz-product__summary .product_title {
+		font-size: clamp(1.375rem, 1.1rem + 1vw, 1.875rem);
+		margin: 0;
+	}
+
+	.dz-product-identity {
+		align-items: center;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.75rem;
+		margin-top: 0.75rem;
+	}
+
+	.dz-product-identity__sku {
+		align-items: center;
+		display: flex;
+		gap: 0.5rem;
+		margin: 0;
+	}
+
+	.dz-product-identity__label {
+		color: var(--color-ink-500);
+		font-size: 0.8125rem;
+	}
+
+	.dz-product__summary .price {
+		color: var(--color-ink-900);
+		display: block;
+		font-size: 1.75rem;
+		font-weight: 700;
+		line-height: 1.1;
+		margin: 0;
+	}
+
+	.dz-product__summary .price del {
+		color: var(--color-ink-400);
+		font-size: 1.125rem;
+		font-weight: 500;
+		margin-right: 0.5rem;
+	}
+
+	.dz-product__summary .price ins {
+		background: none;
+		color: var(--color-signal-600);
+		text-decoration: none;
+	}
+
+	.woocommerce-product-details__short-description {
+		color: var(--color-ink-600);
+	}
+
+	.woocommerce-product-details__short-description > * + * {
+		margin-top: 0.75rem;
+	}
+
+	/* --- Compatibility ---------------------------------------------------- */
+	.dz-compat {
+		background: var(--color-ink-50);
+		border: 1px solid var(--color-ink-200);
+		border-radius: var(--radius-card);
+		padding: 1rem;
+	}
+
+	.dz-compat__title {
+		align-items: center;
+		display: flex;
+		font-size: 0.9375rem;
+		gap: 0.5rem;
+		margin: 0 0 0.75rem;
+	}
+
+	.dz-compat__icon {
+		color: var(--color-ink-400);
+	}
+
+	.dz-compat__group + .dz-compat__group {
+		margin-top: 0.75rem;
+	}
+
+	.dz-compat__group-label {
+		color: var(--color-ink-500);
+		font-size: var(--text-2xs);
+		font-weight: 650;
+		letter-spacing: 0.04em;
+		margin: 0 0 0.375rem;
+		text-transform: uppercase;
+	}
+
+	.dz-compat__list {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.375rem;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	.dz-compat__note {
+		border-top: 1px solid var(--color-ink-200);
+		color: var(--color-ink-500);
+		font-size: 0.75rem;
+		margin: 0.875rem 0 0;
+		padding-top: 0.75rem;
+	}
+
+	/* --- Specs ------------------------------------------------------------ */
+	.dz-specs__title {
+		font-size: 0.9375rem;
+		margin: 0 0 0.5rem;
+	}
+
+	.dz-specs__list {
+		margin: 0;
+	}
+
+	.dz-specs__row {
+		border-bottom: 1px solid var(--color-ink-100);
+		display: grid;
+		gap: 0.25rem 1rem;
+		grid-template-columns: minmax(0, 11rem) minmax(0, 1fr);
+		padding-block: 0.5rem;
+	}
+
+	.dz-specs__row dt {
+		color: var(--color-ink-500);
+		font-size: 0.8125rem;
+		margin: 0;
+	}
+
+	.dz-specs__row dd {
+		font-size: 0.875rem;
+		margin: 0;
+	}
+
+	/* --- Categories and tags ---------------------------------------------- */
+	.dz-product-taxonomies {
+		border-top: 1px solid var(--color-ink-100);
+		display: grid;
+		gap: 0.75rem;
+		padding-top: 1rem;
+	}
+
+	.dz-product-taxonomies__label {
+		color: var(--color-ink-500);
+		display: block;
+		font-size: var(--text-2xs);
+		font-weight: 650;
+		letter-spacing: 0.04em;
+		margin-bottom: 0.375rem;
+		text-transform: uppercase;
+	}
+
+	/* --- Add to cart ------------------------------------------------------ */
+	.dz-product__summary form.cart {
+		align-items: center;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.75rem;
+		margin: 0;
+	}
+
+	.dz-product__summary form.cart .quantity {
+		flex: 0 0 auto;
+	}
+
+	/* Base styling for the quantity input before the stepper is enhanced in. */
+	.dz-product__summary .quantity input.qty {
+		border: 1px solid var(--color-ink-200);
+		border-radius: var(--radius-control);
+		font: inherit;
+		font-variant-numeric: tabular-nums;
+		min-height: 2.75rem;
+		padding: 0.25rem;
+		text-align: center;
+		width: 4.5rem;
+	}
+
+	.dz-qty {
+		align-items: center;
+		border: 1px solid var(--color-ink-200);
+		border-radius: var(--radius-control);
+		display: inline-flex;
+		overflow: hidden;
+	}
+
+	.dz-qty__btn {
+		background: #fff;
+		border: 0;
+		color: var(--color-ink-700);
+		cursor: pointer;
+		font-size: 1rem;
+		line-height: 1;
+		min-height: 2.75rem;
+		width: 2.5rem;
+	}
+
+	.dz-qty__btn:hover {
+		background: var(--color-ink-50);
+	}
+
+	/* More specific than the plain input rule above so the stepper wins. */
+	.dz-product__summary .quantity.dz-qty input.qty {
+		appearance: textfield;
+		border: 0;
+		border-inline: 1px solid var(--color-ink-200);
+		font: inherit;
+		font-variant-numeric: tabular-nums;
+		min-height: 2.75rem;
+		padding: 0.25rem;
+		text-align: center;
+		width: 3.5rem;
+	}
+
+	.dz-qty input.qty::-webkit-outer-spin-button,
+	.dz-qty input.qty::-webkit-inner-spin-button {
+		appearance: none;
+		margin: 0;
+	}
+
+	.dz-product__summary form.cart .single_add_to_cart_button {
+		background: var(--color-signal-600);
+		border: 0;
+		border-radius: var(--radius-control);
+		color: #fff;
+		cursor: pointer;
+		flex: 1 1 12rem;
+		font-size: 0.9375rem;
+		font-weight: 650;
+		min-height: 2.75rem;
+		padding: 0.625rem 1.25rem;
+	}
+
+	.dz-product__summary form.cart .single_add_to_cart_button:hover {
+		background: var(--color-signal-700);
+	}
+
+	.dz-product__summary .stock.out-of-stock {
+		color: var(--color-stock-out);
+		font-size: 0.875rem;
+	}
+
+	/* --- Fulfilment ------------------------------------------------------- */
+	.dz-fulfilment {
+		border-top: 1px solid var(--color-ink-100);
+		display: grid;
+		gap: 0.5rem;
+		list-style: none;
+		margin: 0;
+		padding: 1rem 0 0;
+	}
+
+	.dz-fulfilment__item {
+		align-items: flex-start;
+		color: var(--color-ink-600);
+		display: flex;
+		font-size: 0.875rem;
+		gap: 0.625rem;
+	}
+
+	.dz-fulfilment__icon {
+		color: var(--color-ink-400);
+		margin-top: 0.1875rem;
+	}
+
+	/* --- Tabs ------------------------------------------------------------- */
+	.dz-tabs {
+		border-top: 1px solid var(--color-ink-100);
+		margin-top: 2.5rem;
+		padding-top: 2rem;
+	}
+
+	.dz-tabs__list {
+		border-bottom: 1px solid var(--color-ink-200);
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.25rem;
+		list-style: none;
+		margin: 0 0 1.5rem;
+		padding: 0;
+	}
+
+	.dz-tabs__tab {
+		background: none;
+		border: 0;
+		border-bottom: 2px solid transparent;
+		color: var(--color-ink-500);
+		cursor: pointer;
+		font: inherit;
+		font-weight: 600;
+		margin-bottom: -1px;
+		padding: 0.625rem 0.875rem;
+	}
+
+	.dz-tabs__tab[aria-selected="true"] {
+		border-bottom-color: var(--color-signal-600);
+		color: var(--color-ink-900);
+	}
+
+	.dz-tabs__panel[hidden] {
+		display: none;
+	}
+
+	.dz-tabs__panel .shop_attributes th {
+		color: var(--color-ink-500);
+		font-weight: 600;
+		width: 15rem;
+	}
+
+	.dz-tabs__panel .shop_attributes th,
+	.dz-tabs__panel .shop_attributes td {
+		border-bottom: 1px solid var(--color-ink-100);
+		padding: 0.625rem 0.5rem;
+		text-align: left;
+	}
+
+	.dz-tabs__panel .shop_attributes p {
+		margin: 0;
+	}
+
+	/* --- Related and up-sells --------------------------------------------- */
+	.dz-related,
+	.up-sells {
+		border-top: 1px solid var(--color-ink-100);
+		margin-top: 2.5rem;
+		padding-top: 2rem;
+	}
+
+	.up-sells > h2 {
+		font-size: 1.375rem;
+		margin: 0 0 1.5rem;
+	}
+}

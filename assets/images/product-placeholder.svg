@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" role="img" aria-label="Фотография товара отсутствует">
+	<rect width="480" height="480" fill="#f6f7f9"/>
+	<g fill="none" stroke="#c3c9d2" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+		<circle cx="240" cy="240" r="96"/>
+		<circle cx="240" cy="240" r="34"/>
+		<path d="M240 144v34M240 302v34M144 240h34M302 240h34"/>
+		<path d="M172 172l24 24M308 172l-24 24M172 308l24-24M308 308l-24-24"/>
+	</g>
+	<text x="240" y="392" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20" fill="#8d97a5">Фото отсутствует</text>
+</svg>

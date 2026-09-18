@@ -1,0 +1,267 @@
+/* Home page sections. */
+@layer components {
+
+	.dz-hero {
+		background: var(--color-ink-900);
+		color: #fff;
+		padding-block: 2.5rem 3rem;
+	}
+
+	@media (min-width: 1024px) {
+		.dz-hero { padding-block: 3.5rem 4rem; }
+	}
+
+	.dz-hero__inner {
+		max-width: 56rem;
+	}
+
+	.dz-hero__eyebrow {
+		color: var(--color-ink-400);
+		font-size: var(--text-2xs);
+		letter-spacing: 0.1em;
+		margin: 0 0 0.75rem;
+		text-transform: uppercase;
+	}
+
+	.dz-hero__title {
+		color: #fff;
+		font-size: clamp(1.75rem, 1.2rem + 2.2vw, 2.75rem);
+		margin: 0;
+	}
+
+	.dz-hero__subtitle {
+		color: var(--color-ink-300);
+		margin: 0.875rem 0 0;
+		max-width: 52ch;
+	}
+
+	.dz-hero__search {
+		margin-top: 1.75rem;
+		max-width: 46rem;
+	}
+
+	.dz-hero .dz-search__input {
+		background: #fff;
+		border-color: transparent;
+		min-height: 3.25rem;
+	}
+
+	.dz-hero .dz-search__submit {
+		background: var(--color-signal-600);
+		min-height: 3.25rem;
+	}
+
+	.dz-hero .dz-search__submit:hover {
+		background: var(--color-signal-700);
+	}
+
+	.dz-hero .dz-search__hint {
+		color: var(--color-ink-400);
+	}
+
+	.dz-hero__stats {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1.5rem 2.5rem;
+		list-style: none;
+		margin: 2rem 0 0;
+		padding: 0;
+	}
+
+	.dz-hero__stat-value {
+		color: #fff;
+		display: block;
+		font-size: 1.375rem;
+		font-weight: 700;
+		line-height: 1.1;
+	}
+
+	.dz-hero__stat-label {
+		color: var(--color-ink-400);
+		font-size: 0.8125rem;
+	}
+
+	/* --- Category tiles --------------------------------------------------- */
+	.dz-tiles {
+		display: grid;
+		gap: 0.75rem;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	@media (min-width: 640px) {
+		.dz-tiles { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+	}
+
+	@media (min-width: 1024px) {
+		.dz-tiles { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+	}
+
+	.dz-tile {
+		align-items: center;
+		border: 1px solid var(--color-ink-200);
+		border-radius: var(--radius-card);
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		height: 100%;
+		justify-content: center;
+		padding: 1rem 0.75rem;
+		text-align: center;
+		text-decoration: none;
+		transition: border-color 0.15s ease;
+	}
+
+	.dz-tile:hover {
+		border-color: var(--color-ink-900);
+	}
+
+	.dz-tile__media {
+		aspect-ratio: 1 / 1;
+		width: 3.5rem;
+	}
+
+	.dz-tile__media img {
+		height: 100%;
+		object-fit: contain;
+		width: 100%;
+	}
+
+	.dz-tile__name {
+		font-size: 0.8125rem;
+		font-weight: 600;
+		line-height: 1.3;
+	}
+
+	.dz-tile__count {
+		color: var(--color-ink-400);
+		font-size: 0.75rem;
+	}
+
+	/* --- Make grid -------------------------------------------------------- */
+	.dz-makes {
+		display: grid;
+		gap: 0.5rem;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	@media (min-width: 640px) {
+		.dz-makes { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+	}
+
+	@media (min-width: 1024px) {
+		.dz-makes { grid-template-columns: repeat(8, minmax(0, 1fr)); }
+	}
+
+	.dz-make {
+		align-items: center;
+		border: 1px solid var(--color-ink-200);
+		border-radius: var(--radius-control);
+		display: flex;
+		font-size: 0.875rem;
+		font-weight: 600;
+		justify-content: center;
+		min-height: 3rem;
+		padding: 0.5rem;
+		text-align: center;
+		text-decoration: none;
+	}
+
+	.dz-make:hover {
+		border-color: var(--color-ink-900);
+	}
+
+	/* --- Advantages ------------------------------------------------------- */
+	.dz-advantages {
+		display: grid;
+		gap: 1.5rem;
+		grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	.dz-advantage__icon {
+		color: var(--color-signal-600);
+		font-size: 1.25rem;
+	}
+
+	.dz-advantage__title {
+		font-size: 1rem;
+		margin: 0.625rem 0 0.375rem;
+	}
+
+	.dz-advantage__text {
+		color: var(--color-ink-500);
+		font-size: 0.875rem;
+		margin: 0;
+	}
+
+	/* --- Split panels ----------------------------------------------------- */
+	.dz-split {
+		display: grid;
+		gap: 1rem;
+	}
+
+	@media (min-width: 900px) {
+		.dz-split { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+	}
+
+	.dz-panel {
+		border: 1px solid var(--color-ink-200);
+		border-radius: var(--radius-card);
+		display: flex;
+		flex-direction: column;
+		padding: 1.5rem;
+	}
+
+	.dz-panel--dark {
+		background: var(--color-ink-900);
+		border-color: var(--color-ink-900);
+		color: var(--color-ink-300);
+	}
+
+	.dz-panel--dark .dz-panel__title {
+		color: #fff;
+	}
+
+	.dz-panel__title {
+		font-size: 1.125rem;
+		margin: 0 0 0.625rem;
+	}
+
+	.dz-panel__text {
+		margin: 0 0 1.25rem;
+	}
+
+	.dz-panel__list {
+		display: grid;
+		gap: 0.5rem;
+		font-size: 0.875rem;
+		list-style: none;
+		margin: 0 0 1.25rem;
+		padding: 0;
+	}
+
+	.dz-panel__list li {
+		display: flex;
+		gap: 0.625rem;
+	}
+
+	.dz-panel__list i {
+		color: var(--color-signal-600);
+		margin-top: 0.25rem;
+	}
+
+	.dz-panel__actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+		margin-top: auto;
+	}
+}

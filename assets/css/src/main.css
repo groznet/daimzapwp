@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+/* Component layers, one file per area of the interface. */
+@import "./parts/structure.css";
+@import "./parts/elements.css";
+@import "./parts/header.css";
+@import "./parts/footer.css";
+@import "./parts/home.css";
+@import "./parts/catalog.css";
+@import "./parts/product-card.css";
+@import "./parts/product-single.css";
+@import "./parts/cart-checkout.css";
+@import "./parts/account.css";
+@import "./parts/content.css";
+
+/* Scan PHP templates for utility classes. */
+@source "../../../**/*.php";
+
+/* ==========================================================================
+   Design tokens
+   --------------------------------------------------------------------------
+   A single restrained system: cool graphite neutrals for structure, one signal
+   red for actions and prices, a green/amber pair reserved for stock states.
+   Nothing decorative — every token earns its place in the catalog UI.
+   ========================================================================== */
+@theme {
+	--color-ink-50: #f6f7f9;
+	--color-ink-100: #eceef1;
+	--color-ink-200: #dde1e6;
+	--color-ink-300: #c3c9d2;
+	--color-ink-400: #8d97a5;
+	--color-ink-500: #667283;
+	--color-ink-600: #4a5568;
+	--color-ink-700: #333d4d;
+	--color-ink-800: #1d2531;
+	--color-ink-900: #11161e;
+
+	--color-signal-50: #fdf2f3;
+	--color-signal-100: #fbe0e2;
+	--color-signal-500: #d6202c;
+	--color-signal-600: #c1121f;
+	--color-signal-700: #9e0e19;
+
+	--color-stock-in: #15803d;
+	--color-stock-in-bg: #ecfdf3;
+	--color-stock-low: #b45309;
+	--color-stock-low-bg: #fffbeb;
+	--color-stock-out: #64748b;
+	--color-stock-out-bg: #f1f5f9;
+
+	--font-sans: "Inter", "Segoe UI", system-ui, -apple-system, "Roboto", "Helvetica Neue", Arial, sans-serif;
+	--font-mono: ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+	--text-2xs: 0.6875rem;
+	--text-2xs--line-height: 1rem;
+
+	--radius-card: 6px;
+	--radius-control: 4px;
+
+	--shadow-card: 0 1px 2px rgb(17 22 30 / 0.05);
+	--shadow-raised: 0 8px 24px -12px rgb(17 22 30 / 0.24);
+
+	--container-site: 1400px;
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+@layer base {
+	html {
+		-webkit-text-size-adjust: 100%;
+	}
+
+	body {
+		background-color: #fff;
+		color: var(--color-ink-800);
+		font-family: var(--font-sans);
+		font-size: 0.9375rem;
+		line-height: 1.6;
+		-webkit-font-smoothing: antialiased;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		color: var(--color-ink-900);
+		font-weight: 650;
+		letter-spacing: -0.015em;
+		line-height: 1.2;
+		text-wrap: balance;
+	}
+
+	h1 { font-size: clamp(1.625rem, 1.2rem + 1.6vw, 2.25rem); }
+	h2 { font-size: clamp(1.25rem, 1.05rem + 0.8vw, 1.625rem); }
+	h3 { font-size: 1.125rem; }
+
+	a {
+		color: inherit;
+		text-underline-offset: 0.2em;
+	}
+
+	:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+		outline: 2px solid var(--color-signal-600);
+		outline-offset: 2px;
+		border-radius: 2px;
+	}
+
+	img {
+		height: auto;
+		max-width: 100%;
+	}
+
+	table {
+		border-collapse: collapse;
+		width: 100%;
+	}
+
+	/* Respect people who ask for less motion. */
+	@media (prefers-reduced-motion: reduce) {
+		*, *::before, *::after {
+			animation-duration: 0.01ms !important;
+			animation-iteration-count: 1 !important;
+			transition-duration: 0.01ms !important;
+			scroll-behavior: auto !important;
+		}
+	}
+}

@@ -1,0 +1,129 @@
+/* Site footer. */
+@layer components {
+
+	.dz-footer {
+		background: var(--color-ink-900);
+		color: var(--color-ink-300);
+		margin-top: 3rem;
+	}
+
+	.dz-footer a {
+		color: var(--color-ink-200);
+		text-decoration: none;
+	}
+
+	.dz-footer a:hover {
+		color: #fff;
+		text-decoration: underline;
+	}
+
+	.dz-footer__grid {
+		display: grid;
+		gap: 2rem;
+		padding-block: 2.5rem;
+	}
+
+	@media (min-width: 640px) {
+		.dz-footer__grid {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+	}
+
+	@media (min-width: 1024px) {
+		.dz-footer__grid {
+			grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+		}
+	}
+
+	.dz-footer__title {
+		color: #fff;
+		font-size: 0.8125rem;
+		letter-spacing: 0.06em;
+		margin: 0 0 0.875rem;
+		text-transform: uppercase;
+	}
+
+	.dz-footer__list {
+		display: grid;
+		gap: 0.5rem;
+		font-size: 0.875rem;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	.dz-footer__contact {
+		align-items: flex-start;
+		display: flex;
+		gap: 0.625rem;
+	}
+
+	.dz-footer__contact i {
+		color: var(--color-ink-500);
+		margin-top: 0.25rem;
+		width: 1rem;
+	}
+
+	.dz-footer__about {
+		color: var(--color-ink-400);
+		font-size: 0.875rem;
+		margin: 0.75rem 0 0;
+		max-width: 38ch;
+	}
+
+	.dz-footer__social {
+		display: flex;
+		gap: 0.5rem;
+		margin-top: 1rem;
+	}
+
+	.dz-footer__social a {
+		align-items: center;
+		border: 1px solid var(--color-ink-700);
+		border-radius: var(--radius-control);
+		display: inline-flex;
+		height: 2.5rem;
+		justify-content: center;
+		width: 2.5rem;
+	}
+
+	.dz-footer__social a:hover {
+		background: var(--color-ink-800);
+		border-color: var(--color-ink-500);
+	}
+
+	.dz-footer__bar {
+		border-top: 1px solid var(--color-ink-800);
+		color: var(--color-ink-500);
+		display: flex;
+		flex-wrap: wrap;
+		font-size: 0.8125rem;
+		gap: 0.5rem 1.5rem;
+		justify-content: space-between;
+		padding-block: 1.25rem;
+	}
+
+	.dz-footer__bar p {
+		margin: 0;
+	}
+
+	.dz-footer .dz-widget {
+		font-size: 0.875rem;
+	}
+
+	.dz-footer .dz-widget__title {
+		color: #fff;
+		font-size: 0.8125rem;
+		letter-spacing: 0.06em;
+		margin: 0 0 0.875rem;
+		text-transform: uppercase;
+	}
+
+	.dz-footer .dz-widget ul {
+		display: grid;
+		gap: 0.5rem;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+}

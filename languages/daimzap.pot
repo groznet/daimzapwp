@@ -1,0 +1,1077 @@
+# Copyright (C) 2026 GrozNet
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: DaimZap 1.0.0\n"
+"Report-Msgid-Bugs-To: https://github.com/groznet/daimzapwp/issues\n"
+"POT-Creation-Date: 2026-09-18 15:42+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language-Team: GrozNet <info@groznet.com>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11) ? 0 : ((n%10>=2 && n%10<=4 && (n%100<12 || n%100>14)) ? 1 : 2);\n"
+"X-Domain: daimzap\n"
+
+
+#: 404.php:19 inc/template-tags.php:150
+msgid "Страница не найдена"
+msgstr ""
+
+#: 404.php:21
+msgid "Возможно, страница была удалена или адрес указан с ошибкой. Найдите нужную деталь по артикулу или вернитесь в каталог."
+msgstr ""
+
+#: 404.php:35 template-parts/content/none.php:34
+msgid "На главную"
+msgstr ""
+
+#: 404.php:37
+msgid "В каталог"
+msgstr ""
+
+#: 404.php:39 template-parts/header/actions.php:18
+msgid "Оптовикам"
+msgstr ""
+
+#. translators: %d: comment count.
+#: comments.php:22
+msgid "Комментарий: %d"
+msgid_plural "Комментариев: %d"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: comments.php:43
+msgid "Навигация по комментариям"
+msgstr ""
+
+#: comments.php:51
+msgid "Комментарии закрыты."
+msgstr ""
+
+#: comments.php:58
+msgid "Оставить комментарий"
+msgstr ""
+
+#: comments.php:59
+msgid "Отправить"
+msgstr ""
+
+#: comments.php:62
+msgid "Комментарий"
+msgstr ""
+
+#: footer.php:24
+msgid "Каталог автозапчастей для легковых и коммерческих автомобилей. Розница и опт, доставка по России и самовывоз в Грозном."
+msgstr ""
+
+#: footer.php:31 inc/customizer.php:72
+msgid "Instagram"
+msgstr ""
+
+#: footer.php:37 inc/customizer.php:73
+msgid "YouTube"
+msgstr ""
+
+#: footer.php:45
+msgid "Каталог"
+msgstr ""
+
+#: footer.php:63
+msgid "Покупателям"
+msgstr ""
+
+#: footer.php:77 inc/woocommerce/hooks.php:373 page-templates/template-wholesale.php:85 template-parts/header/actions.php:19 template-parts/header/drawer.php:41 template-parts/home/panels.php:73
+msgid "Стать оптовиком"
+msgstr ""
+
+#: footer.php:83
+msgid "Контакты"
+msgstr ""
+
+#. translators: %1$s: current year, %2$s: site name.
+#: footer.php:136
+msgid "© %1$s %2$s. Все права защищены."
+msgstr ""
+
+#: header.php:22
+msgid "Перейти к содержимому"
+msgstr ""
+
+#: header.php:39 inc/assets.php:93
+msgid "Открыть меню"
+msgstr ""
+
+#: header.php:70 inc/setup.php:65
+msgid "Основное меню"
+msgstr ""
+
+#: inc/assets.php:94 template-parts/header/drawer.php:17
+msgid "Закрыть меню"
+msgstr ""
+
+#: inc/assets.php:95
+msgid "Показать фильтры"
+msgstr ""
+
+#. translators: %s: menu item name.
+#: inc/class-daimzap-nav-walker.php:128
+msgid "Раскрыть подменю «%s»"
+msgstr ""
+
+#: inc/customizer.php:60
+msgid "DaimZap: контакты"
+msgstr ""
+
+#: inc/customizer.php:62
+msgid "Контактные данные, которые выводятся в шапке, подвале и на странице контактов."
+msgstr ""
+
+#: inc/customizer.php:67 inc/wholesale.php:42 page-templates/template-contacts.php:31 page-templates/template-wholesale.php:69
+msgid "Телефон"
+msgstr ""
+
+#: inc/customizer.php:68 page-templates/template-contacts.php:38 template-parts/header/topbar.php:39
+msgid "WhatsApp"
+msgstr ""
+
+#: inc/customizer.php:69 inc/wholesale.php:48 page-templates/template-contacts.php:45 page-templates/template-wholesale.php:76 woocommerce/checkout/thankyou.php:57 woocommerce/myaccount/form-login.php:72
+msgid "E-mail"
+msgstr ""
+
+#: inc/customizer.php:70 page-templates/template-contacts.php:52
+msgid "Адрес"
+msgstr ""
+
+#: inc/customizer.php:71 page-templates/template-contacts.php:59
+msgid "Часы работы"
+msgstr ""
+
+#: inc/customizer.php:99
+msgid "DaimZap: главная страница"
+msgstr ""
+
+#: inc/customizer.php:101
+msgid "Текст в первом экране главной страницы и объявление в верхней панели."
+msgstr ""
+
+#: inc/customizer.php:117
+msgid "Заголовок первого экрана"
+msgstr ""
+
+#: inc/customizer.php:135
+msgid "Подзаголовок первого экрана"
+msgstr ""
+
+#: inc/customizer.php:153
+msgid "Объявление в верхней панели"
+msgstr ""
+
+#: inc/customizer.php:154
+msgid "Оставьте поле пустым, чтобы скрыть панель."
+msgstr ""
+
+#: inc/customizer.php:172
+msgid "Страница «Стать оптовиком»"
+msgstr ""
+
+#: inc/customizer.php:173
+msgid "Используется для кнопок «Стать оптовиком» по всему сайту."
+msgstr ""
+
+#: inc/setup.php:66
+msgid "Меню каталога"
+msgstr ""
+
+#: inc/setup.php:67
+msgid "Меню в подвале"
+msgstr ""
+
+#: inc/setup.php:68
+msgid "Служебные ссылки"
+msgstr ""
+
+#: inc/setup.php:112
+msgid "Сайдбар каталога"
+msgstr ""
+
+#: inc/setup.php:114
+msgid "Отображается в каталоге под фильтрами. Подходит для виджетов фильтрации WooCommerce."
+msgstr ""
+
+#: inc/setup.php:123
+msgid "Сайдбар блога"
+msgstr ""
+
+#: inc/setup.php:125
+msgid "Отображается в новостях и на страницах записей."
+msgstr ""
+
+#: inc/setup.php:134
+msgid "Подвал"
+msgstr ""
+
+#: inc/setup.php:136
+msgid "Дополнительная колонка в подвале сайта."
+msgstr ""
+
+#: inc/template-functions.php:76
+msgid "Читать далее"
+msgstr ""
+
+#: inc/template-tags.php:292
+msgid "позиция в каталоге"
+msgid_plural "позиций в каталоге"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: inc/template-tags.php:306
+msgid "категория запчастей"
+msgid_plural "категорий запчастей"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: inc/template-tags.php:315
+msgid "марка автомобилей"
+msgid_plural "марок автомобилей"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: inc/template-tags.php:113 inc/template-tags.php:154
+msgid "Хлебные крошки"
+msgstr ""
+
+#: inc/template-tags.php:118 inc/template-tags.php:128
+msgid "Главная"
+msgstr ""
+
+#: inc/template-tags.php:145
+msgid "Результаты поиска"
+msgstr ""
+
+#: inc/template-tags.php:180
+msgid "Предыдущая страница"
+msgstr ""
+
+#: inc/template-tags.php:181
+msgid "Следующая страница"
+msgstr ""
+
+#: inc/template-tags.php:182
+msgid "Навигация по страницам"
+msgstr ""
+
+#: inc/wholesale.php:30
+msgid "Название компании или ИП"
+msgstr ""
+
+#: inc/wholesale.php:36
+msgid "Контактное лицо"
+msgstr ""
+
+#: inc/wholesale.php:54
+msgid "Город"
+msgstr ""
+
+#: inc/wholesale.php:60
+msgid "Какие запчасти вас интересуют"
+msgstr ""
+
+#. translators: %s: site name.
+#: inc/wholesale.php:206
+msgid "[%s] Новая заявка на оптовое сотрудничество"
+msgstr ""
+
+#: inc/woocommerce/account.php:22
+msgid "Обзор"
+msgstr ""
+
+#: inc/woocommerce/account.php:23 woocommerce/checkout/thankyou.php:33 woocommerce/myaccount/orders.php:20
+msgid "Мои заказы"
+msgstr ""
+
+#: inc/woocommerce/account.php:24 woocommerce/myaccount/dashboard.php:40
+msgid "Адреса"
+msgstr ""
+
+#: inc/woocommerce/account.php:25
+msgid "Личные данные"
+msgstr ""
+
+#: inc/woocommerce/account.php:26
+msgid "Выйти"
+msgstr ""
+
+#: inc/woocommerce/account.php:95
+msgid "Для розничных покупок регистрация не нужна — оформить заказ можно без аккаунта."
+msgstr ""
+
+#: inc/woocommerce/account.php:96
+msgid "Оптовым покупателям — сюда"
+msgstr ""
+
+#. translators: %d: number of additional compatible vehicles.
+#: inc/woocommerce/attributes.php:234
+msgid "+%d модель"
+msgid_plural "+%d моделей"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: inc/woocommerce/attributes.php:36
+msgid "Марка автомобиля"
+msgstr ""
+
+#: inc/woocommerce/attributes.php:41
+msgid "Модель автомобиля"
+msgstr ""
+
+#. translators: %d: number of items in the cart.
+#: inc/woocommerce/cart.php:26
+msgid "товар в корзине"
+msgid_plural "товаров в корзине"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: inc/woocommerce/cart.php:112 woocommerce/content-product.php:77
+msgid "Артикул:"
+msgstr ""
+
+#: inc/woocommerce/cart.php:127
+msgid "Корзина пуста"
+msgstr ""
+
+#: inc/woocommerce/cart.php:128
+msgid "Найдите нужную деталь по артикулу, марке или модели автомобиля."
+msgstr ""
+
+#: inc/woocommerce/cart.php:129 woocommerce/myaccount/orders.php:93
+msgid "Перейти в каталог"
+msgstr ""
+
+#: inc/woocommerce/catalog.php:83 template-parts/catalog/toolbar.php:20
+msgid "По умолчанию"
+msgstr ""
+
+#: inc/woocommerce/catalog.php:84 template-parts/catalog/toolbar.php:21
+msgid "Сначала новые"
+msgstr ""
+
+#: inc/woocommerce/catalog.php:85 template-parts/catalog/toolbar.php:22
+msgid "Цена: по возрастанию"
+msgstr ""
+
+#: inc/woocommerce/catalog.php:86 template-parts/catalog/toolbar.php:23
+msgid "Цена: по убыванию"
+msgstr ""
+
+#: inc/woocommerce/catalog.php:87
+msgid "По названию"
+msgstr ""
+
+#. translators: %s: formatted minimum price.
+#: inc/woocommerce/catalog.php:293
+msgid "от %s"
+msgstr ""
+
+#. translators: %s: formatted maximum price.
+#: inc/woocommerce/catalog.php:298
+msgid "до %s"
+msgstr ""
+
+#. translators: %s: formatted maximum price.
+#: inc/woocommerce/catalog.php:302 template-parts/catalog/filters.php:127 woocommerce/cart/cart.php:71
+msgid "Цена"
+msgstr ""
+
+#: inc/woocommerce/catalog.php:313 template-parts/catalog/filters.php:179
+msgid "Наличие"
+msgstr ""
+
+#: inc/woocommerce/catalog.php:314 template-parts/catalog/filters.php:190
+msgid "Только в наличии"
+msgstr ""
+
+#: inc/woocommerce/hooks.php:83
+msgid "Артикул"
+msgstr ""
+
+#: inc/woocommerce/hooks.php:108 inc/woocommerce/setup.php:195
+msgid "Нет в наличии"
+msgstr ""
+
+#. translators: %d: remaining stock quantity.
+#: inc/woocommerce/hooks.php:123
+msgid "Осталось %d шт."
+msgstr ""
+
+#. translators: %d: stock quantity.
+#: inc/woocommerce/hooks.php:134
+msgid "В наличии: %d шт."
+msgstr ""
+
+#. translators: %d: stock quantity.
+#. translators: %s: number of items in stock.
+#: inc/woocommerce/hooks.php:144 inc/woocommerce/setup.php:211
+msgid "В наличии"
+msgstr ""
+
+#: inc/woocommerce/hooks.php:172
+msgid "Марки"
+msgstr ""
+
+#: inc/woocommerce/hooks.php:176
+msgid "Модели"
+msgstr ""
+
+#: inc/woocommerce/hooks.php:184
+msgid "Совместимость"
+msgstr ""
+
+#: inc/woocommerce/hooks.php:205
+msgid "Перед покупкой сверьте артикул с деталью на вашем автомобиле или уточните совместимость у менеджера."
+msgstr ""
+
+#: inc/woocommerce/hooks.php:276
+msgid "Кратко о товаре"
+msgstr ""
+
+#: inc/woocommerce/hooks.php:307 template-parts/catalog/filters.php:109
+msgid "Категории"
+msgstr ""
+
+#: inc/woocommerce/hooks.php:311
+msgid "Метки"
+msgstr ""
+
+#: inc/woocommerce/hooks.php:358
+msgid "Доставка по Грозному, Чечне и другим регионам России"
+msgstr ""
+
+#: inc/woocommerce/hooks.php:364
+msgid "Самовывоз:"
+msgstr ""
+
+#: inc/woocommerce/hooks.php:372
+msgid "Нужен опт?"
+msgstr ""
+
+#. translators: %d: discount percentage.
+#: inc/woocommerce/hooks.php:402
+msgid "−%d%%"
+msgstr ""
+
+#. translators: %d: discount percentage.
+#: inc/woocommerce/hooks.php:406
+msgid "Акция"
+msgstr ""
+
+#: inc/woocommerce/hooks.php:440
+msgid "В корзину"
+msgstr ""
+
+#: inc/woocommerce/hooks.php:454
+msgid "Добавить в корзину"
+msgstr ""
+
+#: inc/woocommerce/setup.php:133
+msgid "Фотография товара отсутствует"
+msgstr ""
+
+#: inc/woocommerce/setup.php:171
+msgid "Описание"
+msgstr ""
+
+#: inc/woocommerce/setup.php:175
+msgid "Характеристики"
+msgstr ""
+
+#: inc/woocommerce/setup.php:179
+msgid "Отзывы"
+msgstr ""
+
+#. translators: %s: number of items in stock.
+#: inc/woocommerce/setup.php:205
+msgid "В наличии: %s шт."
+msgstr ""
+
+#: index.php:17
+msgid "Новости"
+msgstr ""
+
+#: index.php:18
+msgid "Статьи, советы по подбору запчастей и новости магазина."
+msgstr ""
+
+#: page-templates/template-wholesale.php:28
+msgid "Условия для автосервисов, магазинов и постоянных партнёров."
+msgstr ""
+
+#: page-templates/template-wholesale.php:38
+msgid "Розничные покупки на DaimZap доступны без регистрации. Оптовое сотрудничество оформляется отдельно: после заявки менеджер связывается с вами, уточняет профиль закупок и согласует условия."
+msgstr ""
+
+#: page-templates/template-wholesale.php:42
+msgid "Как это работает"
+msgstr ""
+
+#: page-templates/template-wholesale.php:46
+msgid "Заявка"
+msgstr ""
+
+#: page-templates/template-wholesale.php:47
+msgid "Заполните форму — укажите компанию и контакты."
+msgstr ""
+
+#: page-templates/template-wholesale.php:50
+msgid "Проверка"
+msgstr ""
+
+#: page-templates/template-wholesale.php:51
+msgid "Администрация рассматривает заявку и связывается с вами."
+msgstr ""
+
+#: page-templates/template-wholesale.php:54
+msgid "Условия"
+msgstr ""
+
+#: page-templates/template-wholesale.php:55
+msgid "Согласуем цены, порядок отгрузки и доставку."
+msgstr ""
+
+#: page-templates/template-wholesale.php:58
+msgid "Работа"
+msgstr ""
+
+#: page-templates/template-wholesale.php:59
+msgid "Оформляйте заказы по списку артикулов — остатки обновляются из 1С."
+msgstr ""
+
+#: page-templates/template-wholesale.php:64
+msgid "Связаться напрямую"
+msgstr ""
+
+#: page-templates/template-wholesale.php:86
+msgid "Поля со звёздочкой обязательны."
+msgstr ""
+
+#: page-templates/template-wholesale.php:90
+msgid "Заявка отправлена. Менеджер свяжется с вами в рабочее время."
+msgstr ""
+
+#: page-templates/template-wholesale.php:94
+msgid "Проверьте обязательные поля и корректность e-mail."
+msgstr ""
+
+#: page-templates/template-wholesale.php:98
+msgid "Заявка уже отправлена. Попробуйте ещё раз через минуту."
+msgstr ""
+
+#: page-templates/template-wholesale.php:102
+msgid "Срок действия формы истёк. Заполните её заново."
+msgstr ""
+
+#: page-templates/template-wholesale.php:111
+msgid "Не заполняйте это поле"
+msgstr ""
+
+#. translators: %s: privacy policy link.
+#: page-templates/template-wholesale.php:153
+msgid "Отправляя заявку, вы соглашаетесь с %s."
+msgstr ""
+
+#. translators: %s: privacy policy link.
+#: page-templates/template-wholesale.php:154
+msgid "политикой конфиденциальности"
+msgstr ""
+
+#. translators: %s: privacy policy link.
+#: page-templates/template-wholesale.php:157
+msgid "Отправляя заявку, вы соглашаетесь на обработку персональных данных."
+msgstr ""
+
+#: page-templates/template-wholesale.php:163
+msgid "Отправить заявку"
+msgstr ""
+
+#: page.php:27 single.php:35
+msgid "Страницы:"
+msgstr ""
+
+#. translators: %d: number of results.
+#: search.php:24
+msgid "Найден %d материал"
+msgid_plural "Найдено материалов: %d"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#. translators: %s: search term.
+#: search.php:21
+msgid "Результаты поиска: %s"
+msgstr ""
+
+#: sidebar.php:14
+msgid "Боковая панель"
+msgstr ""
+
+#: template-parts/catalog/active-filters.php:17
+msgid "Выбрано:"
+msgstr ""
+
+#: template-parts/catalog/active-filters.php:23
+msgid "Убрать фильтр"
+msgstr ""
+
+#: template-parts/catalog/active-filters.php:28
+msgid "Сбросить всё"
+msgstr ""
+
+#: template-parts/catalog/filters.php:43
+msgid "Фильтры каталога"
+msgstr ""
+
+#: template-parts/catalog/filters.php:45 template-parts/catalog/toolbar.php:66
+msgid "Фильтры"
+msgstr ""
+
+#: template-parts/catalog/filters.php:49
+msgid "Закрыть"
+msgstr ""
+
+#: template-parts/catalog/filters.php:74
+msgid "Поиск в списке"
+msgstr ""
+
+#: template-parts/catalog/filters.php:80
+msgid "Начните вводить…"
+msgstr ""
+
+#: template-parts/catalog/filters.php:132
+msgid "Цена от"
+msgstr ""
+
+#: template-parts/catalog/filters.php:147
+msgid "Цена до"
+msgstr ""
+
+#: template-parts/catalog/filters.php:172 template-parts/catalog/toolbar.php:81 woocommerce/cart/cart.php:137 woocommerce/cart/cart.php:138
+msgid "Применить"
+msgstr ""
+
+#: template-parts/catalog/filters.php:205 woocommerce/loop/no-products-found.php:29
+msgid "Сбросить фильтры"
+msgstr ""
+
+#. translators: %s: number of products.
+#: template-parts/catalog/header.php:65
+msgid "%s товар в каталоге"
+msgid_plural "%s товаров в каталоге"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#. translators: %s: total number of products.
+#: template-parts/catalog/toolbar.php:41
+msgid "Показан %s товар"
+msgid_plural "Показано товаров: %s"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: template-parts/catalog/toolbar.php:37
+msgid "Показан 1 товар"
+msgstr ""
+
+#. translators: 1: first result, 2: last result, 3: total results.
+#: template-parts/catalog/toolbar.php:47
+msgid "Показано %1$s–%2$s из %3$s"
+msgstr ""
+
+#: template-parts/catalog/toolbar.php:70
+msgid "Сортировка"
+msgstr ""
+
+#: template-parts/content/none.php:16
+msgid "Ничего не найдено"
+msgstr ""
+
+#: template-parts/content/none.php:18
+msgid "Здесь пока пусто"
+msgstr ""
+
+#: template-parts/content/none.php:26
+msgid "Попробуйте изменить запрос: проверьте артикул или воспользуйтесь названием детали."
+msgstr ""
+
+#: template-parts/content/none.php:28
+msgid "Материалы появятся здесь после публикации."
+msgstr ""
+
+#: template-parts/header/actions.php:13
+msgid "Кабинет"
+msgstr ""
+
+#: template-parts/header/actions.php:13 woocommerce/myaccount/form-login.php:44 woocommerce/myaccount/form-login.php:45
+msgid "Войти"
+msgstr ""
+
+#: template-parts/header/actions.php:33
+msgid "Корзина"
+msgstr ""
+
+#: template-parts/header/branding.php:20
+msgid "Автозапчасти · Грозный"
+msgstr ""
+
+#: template-parts/header/drawer.php:12 template-parts/header/drawer.php:21
+msgid "Мобильное меню"
+msgstr ""
+
+#: template-parts/header/drawer.php:35
+msgid "Меню не назначено. Создайте меню в разделе «Внешний вид → Меню»."
+msgstr ""
+
+#: template-parts/header/search-form.php:32
+msgid "Артикул, название детали, марка или модель"
+msgstr ""
+
+#: template-parts/header/search-form.php:33
+msgid "Поиск по сайту"
+msgstr ""
+
+#: template-parts/header/search-form.php:39
+msgid "Поиск запчастей"
+msgstr ""
+
+#: template-parts/header/search-form.php:56 template-parts/header/search-form.php:57
+msgid "Найти"
+msgstr ""
+
+#: template-parts/header/search-form.php:67
+msgid "Точный артикул откроет карточку товара сразу. Можно искать и по названию детали."
+msgstr ""
+
+#: template-parts/home/advantages.php:13
+msgid "Поиск по артикулу"
+msgstr ""
+
+#: template-parts/home/advantages.php:14
+msgid "Точный артикул сразу открывает карточку детали — без лишних переходов по каталогу."
+msgstr ""
+
+#: template-parts/home/advantages.php:18
+msgid "Подбор по автомобилю"
+msgstr ""
+
+#: template-parts/home/advantages.php:19
+msgid "Фильтры по марке и модели показывают только те детали, которые подходят вашей машине."
+msgstr ""
+
+#: template-parts/home/advantages.php:23
+msgid "Актуальные остатки"
+msgstr ""
+
+#: template-parts/home/advantages.php:24
+msgid "Наличие и цены обновляются из 1С: Управление торговлей."
+msgstr ""
+
+#: template-parts/home/advantages.php:28 template-parts/home/panels.php:18
+msgid "Доставка и самовывоз"
+msgstr ""
+
+#: template-parts/home/advantages.php:29
+msgid "Отправка по России или самовывоз со склада в Грозном."
+msgstr ""
+
+#: template-parts/home/advantages.php:36
+msgid "Почему DaimZap"
+msgstr ""
+
+#. translators: %s: number of products.
+#. translators: 1: formatted order total, 2: number of items.
+#: template-parts/home/categories.php:56 woocommerce/myaccount/orders.php:56
+msgid "%s товар"
+msgid_plural "%s товаров"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: template-parts/home/categories.php:33
+msgid "Категории запчастей"
+msgstr ""
+
+#: template-parts/home/categories.php:36 woocommerce/loop/no-products-found.php:33
+msgid "Весь каталог"
+msgstr ""
+
+#: template-parts/home/hero.php:17
+msgid "Каталог автозапчастей · Грозный"
+msgstr ""
+
+#: template-parts/home/makes.php:26
+msgid "Подбор по марке автомобиля"
+msgstr ""
+
+#: template-parts/home/panels.php:19
+msgid "Заказ можно забрать со склада или получить доставкой — условия зависят от региона и веса детали."
+msgstr ""
+
+#: template-parts/home/panels.php:38
+msgid "Отправка транспортными компаниями по России"
+msgstr ""
+
+#: template-parts/home/panels.php:53
+msgid "Оптовым покупателям"
+msgstr ""
+
+#: template-parts/home/panels.php:54
+msgid "Работаете с автосервисом или магазином? Оставьте заявку — менеджер свяжется с вами и согласует условия."
+msgstr ""
+
+#: template-parts/home/panels.php:59
+msgid "Отдельные цены для постоянных партнёров"
+msgstr ""
+
+#: template-parts/home/panels.php:63
+msgid "Подбор позиций по списку артикулов"
+msgstr ""
+
+#: template-parts/home/panels.php:67
+msgid "Розничные покупки — без регистрации"
+msgstr ""
+
+#: template-parts/home/products.php:32
+msgid "Рекомендуемые товары"
+msgstr ""
+
+#: template-parts/home/products.php:34
+msgid "Новые поступления"
+msgstr ""
+
+#: template-parts/home/products.php:49
+msgid "Смотреть все"
+msgstr ""
+
+#: woocommerce/cart/cart-totals.php:15
+msgid "Итого по заказу"
+msgstr ""
+
+#: woocommerce/cart/cart-totals.php:19 woocommerce/cart/cart-totals.php:20 woocommerce/checkout/review-order.php:57
+msgid "Товары"
+msgstr ""
+
+#: woocommerce/cart/cart-totals.php:36 woocommerce/cart/cart-totals.php:37
+msgid "Доставка"
+msgstr ""
+
+#. translators: %s: country name.
+#: woocommerce/cart/cart-totals.php:55
+msgid "(оценка для %s)"
+msgstr ""
+
+#: woocommerce/cart/cart-totals.php:81 woocommerce/cart/cart-totals.php:82 woocommerce/checkout/review-order.php:106
+msgid "К оплате"
+msgstr ""
+
+#: woocommerce/cart/cart.php:63
+msgid "Доступно под заказ"
+msgstr ""
+
+#: woocommerce/cart/cart.php:102 woocommerce/checkout/review-order.php:19 woocommerce/checkout/thankyou.php:63 woocommerce/myaccount/orders.php:50
+msgid "Сумма"
+msgstr ""
+
+#. translators: %s: product name.
+#: woocommerce/cart/cart.php:114
+msgid "Удалить «%s» из корзины"
+msgstr ""
+
+#: woocommerce/cart/cart.php:135 woocommerce/cart/cart.php:136
+msgid "Промокод"
+msgstr ""
+
+#: woocommerce/cart/cart.php:144 woocommerce/cart/cart.php:145
+msgid "Пересчитать"
+msgstr ""
+
+#: woocommerce/cart/cart.php:157
+msgid "Продолжить покупки"
+msgstr ""
+
+#: woocommerce/checkout/form-checkout.php:21
+msgid "Для оформления заказа необходимо войти в аккаунт."
+msgstr ""
+
+#: woocommerce/checkout/form-checkout.php:44
+msgid "Ваш заказ"
+msgstr ""
+
+#: woocommerce/checkout/review-order.php:18
+msgid "Товар"
+msgstr ""
+
+#: woocommerce/checkout/thankyou.php:22
+msgid "Оплата не прошла. Проверьте данные карты и попробуйте ещё раз или выберите другой способ оплаты."
+msgstr ""
+
+#: woocommerce/checkout/thankyou.php:28
+msgid "Оплатить"
+msgstr ""
+
+#: woocommerce/checkout/thankyou.php:38 woocommerce/checkout/thankyou.php:79
+msgid "Спасибо, заказ принят"
+msgstr ""
+
+#: woocommerce/checkout/thankyou.php:41
+msgid "Менеджер свяжется с вами для подтверждения наличия и способа получения."
+msgstr ""
+
+#: woocommerce/checkout/thankyou.php:46
+msgid "Номер заказа"
+msgstr ""
+
+#: woocommerce/checkout/thankyou.php:51 woocommerce/myaccount/orders.php:38
+msgid "Дата"
+msgstr ""
+
+#: woocommerce/checkout/thankyou.php:69
+msgid "Оплата"
+msgstr ""
+
+#: woocommerce/content-product.php:113
+msgid "Цена по запросу"
+msgstr ""
+
+#: woocommerce/loop/no-products-found.php:17
+msgid "Товары не найдены"
+msgstr ""
+
+#: woocommerce/loop/no-products-found.php:21
+msgid "По выбранным фильтрам ничего нет. Попробуйте убрать часть условий или поискать по артикулу."
+msgstr ""
+
+#: woocommerce/loop/no-products-found.php:23
+msgid "В этом разделе пока нет товаров. Воспользуйтесь поиском по артикулу или выберите другую категорию."
+msgstr ""
+
+#. translators: %s: customer name.
+#: woocommerce/myaccount/dashboard.php:20
+msgid "Здравствуйте, %s"
+msgstr ""
+
+#. translators: %s: customer name.
+#: woocommerce/myaccount/dashboard.php:27
+msgid "Здесь собраны ваши заказы, адреса доставки и личные данные."
+msgstr ""
+
+#. translators: %s: customer name.
+#: woocommerce/myaccount/dashboard.php:32
+msgid "Заказы"
+msgstr ""
+
+#: woocommerce/myaccount/dashboard.php:33
+msgid "История заказов, статусы и детали каждой покупки."
+msgstr ""
+
+#: woocommerce/myaccount/dashboard.php:35 woocommerce/myaccount/dashboard.php:43 woocommerce/myaccount/orders.php:63
+msgid "Открыть"
+msgstr ""
+
+#: woocommerce/myaccount/dashboard.php:41
+msgid "Адреса для выставления счёта и доставки."
+msgstr ""
+
+#: woocommerce/myaccount/dashboard.php:48
+msgid "Оптовое сотрудничество"
+msgstr ""
+
+#: woocommerce/myaccount/dashboard.php:49
+msgid "Отправьте заявку, чтобы получить условия для оптовых закупок."
+msgstr ""
+
+#: woocommerce/myaccount/dashboard.php:51
+msgid "Подробнее"
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:18
+msgid "Вход"
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:24
+msgid "Логин или e-mail"
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:29 woocommerce/myaccount/form-login.php:78
+msgid "Пароль"
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:38
+msgid "Запомнить меня"
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:50
+msgid "Забыли пароль?"
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:59
+msgid "Регистрация"
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:66
+msgid "Логин"
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:82
+msgid "Ссылка для создания пароля придёт на указанный e-mail."
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:89 woocommerce/myaccount/form-login.php:90
+msgid "Зарегистрироваться"
+msgstr ""
+
+#: woocommerce/myaccount/navigation.php:14
+msgid "Меню личного кабинета"
+msgstr ""
+
+#: woocommerce/myaccount/orders.php:31
+msgid "Заказ"
+msgstr ""
+
+#: woocommerce/myaccount/orders.php:45
+msgid "Статус"
+msgstr ""
+
+#. translators: 1: formatted order total, 2: number of items.
+#: woocommerce/myaccount/orders.php:54
+msgid "%1$s за %2$s"
+msgstr ""
+
+#: woocommerce/myaccount/orders.php:76
+msgid "Назад"
+msgstr ""
+
+#: woocommerce/myaccount/orders.php:82
+msgid "Вперёд"
+msgstr ""
+
+#: woocommerce/myaccount/orders.php:90
+msgid "Заказов пока нет"
+msgstr ""
+
+#: woocommerce/myaccount/orders.php:91
+msgid "Оформленные заказы появятся здесь вместе со статусами и составом."
+msgstr ""
+
+#. translators: %d: image number.
+#: woocommerce/single-product/product-image.php:85
+msgid "Фото %d"
+msgstr ""
+
+#: woocommerce/single-product/related.php:16
+msgid "Похожие запчасти"
+msgstr ""

@@ -1,0 +1,21 @@
+/*
+Theme Name: DaimZap
+Theme URI: https://daimzap.ru/
+Author: Kerim @ GrozNet
+Author URI: https://groznet.com/
+Description: Custom WooCommerce theme for DaimZap — professional auto parts catalog (Grozny). Built around SKU-first product discovery and vehicle make/model compatibility filtering.
+Version: 1.0.0
+Requires at least: 6.4
+Tested up to: 6.7
+Requires PHP: 7.4
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: daimzap
+Tags: e-commerce, woocommerce, custom-menu, featured-images, translation-ready, accessibility-ready
+WC requires at least: 8.0
+WC tested up to: 9.9
+
+The visual styles for this theme live in assets/css/main.css (compiled from
+assets/css/src/main.css with Tailwind CSS). This file exists for the theme
+header and is intentionally not used for styling.
+*/
