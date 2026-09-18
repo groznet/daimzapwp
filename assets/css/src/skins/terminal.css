@@ -70,12 +70,16 @@
 	--color-text-on-inverse-muted: #8793a4;
 	--color-text-on-accent: #0b0e12;
 
-	/* Lines */
-	--color-border-subtle: #1a2029;
-	--color-border-base: #232b36;
-	--color-border-strong: #2f3846;
+	/* Lines — softened so the rules read as separation, not as boxes. */
+	--color-border-subtle: #161c24;
+	--color-border-base: #1e2530;
+	--color-border-strong: #28313d;
 	--color-border-emphasis: #ffb01f;
-	--color-border-inverse: #1a2029;
+	--color-border-inverse: #161c24;
+
+	/* Form fields on cart and checkout: filled, not outlined. */
+	--color-field: #171d25;
+	--color-field-focus: #1c232c;
 
 	/* Accent — safety amber, the one colour that carries meaning. */
 	--color-accent: #ffb01f;

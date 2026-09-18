@@ -32,7 +32,7 @@
 	@media (min-width: 768px) {
 		.dz-cart-item {
 			align-items: center;
-			grid-template-columns: 5rem minmax(0, 1fr) 7rem 8rem 2.5rem;
+			grid-template-columns: 5rem minmax(0, 1fr) 7rem 7.5rem 7rem 2.5rem;
 		}
 	}
 
@@ -69,6 +69,11 @@
 	.dz-cart-item__price {
 		color: var(--color-text-muted);
 		font-size: 0.875rem;
+	}
+
+	.dz-cart-item__price,
+	.dz-cart-item__subtotal {
+		white-space: nowrap;
 	}
 
 	.dz-cart-item__subtotal {
@@ -199,6 +204,48 @@
 		padding-block: 0.25rem;
 	}
 
+	/*
+	 * Cart and checkout fields are filled rather than outlined. Removing the
+	 * border keeps a long address form calm; the fill is what marks the input,
+	 * and focus still draws a visible ring from the base layer.
+	 */
+	.woocommerce-cart .dz-input,
+	.woocommerce-cart .dz-select,
+	.woocommerce-cart .dz-textarea,
+	.woocommerce-cart input.qty,
+	.woocommerce-checkout .dz-input,
+	.woocommerce-checkout .dz-select,
+	.woocommerce-checkout .dz-textarea,
+	.woocommerce-checkout .input-text,
+	.woocommerce-checkout select,
+	.woocommerce-checkout textarea,
+	.woocommerce-checkout .select2-container--default .select2-selection--single {
+		background-color: var(--color-field);
+		border: 1px solid transparent;
+		border-radius: var(--radius-control);
+		color: var(--color-text-base);
+	}
+
+	.woocommerce-cart .dz-input:focus,
+	.woocommerce-cart .dz-select:focus,
+	.woocommerce-cart .dz-textarea:focus,
+	.woocommerce-cart input.qty:focus,
+	.woocommerce-checkout .dz-input:focus,
+	.woocommerce-checkout .dz-select:focus,
+	.woocommerce-checkout .dz-textarea:focus,
+	.woocommerce-checkout .input-text:focus,
+	.woocommerce-checkout select:focus,
+	.woocommerce-checkout textarea:focus {
+		background-color: var(--color-field-focus);
+		border-color: transparent;
+	}
+
+	/* Validation still needs to be visible without a resting border. */
+	.woocommerce-checkout .form-row.woocommerce-invalid .input-text,
+	.woocommerce-checkout .form-row.woocommerce-invalid select {
+		border-color: var(--color-accent);
+	}
+
 	/* --- Checkout --------------------------------------------------------- */
 	.dz-checkout {
 		display: grid;
@@ -269,11 +316,14 @@
 		.dz-checkout .form-row-first,
 		.dz-checkout .form-row-last {
 			display: inline-block;
-			width: calc(50% - 0.5rem);
+			vertical-align: top;
+			/* Leaves room for the gutter and the whitespace between the two
+			   inline-block halves; without the slack they wrap onto two rows. */
+			width: calc(50% - 0.75rem);
 		}
 
 		.dz-checkout .form-row-first {
-			margin-right: 0.75rem;
+			margin-right: 1rem;
 		}
 	}
 
@@ -298,6 +348,11 @@
 		border-bottom: 0;
 		font-size: 1.0625rem;
 		font-weight: 700;
+	}
+
+	.dz-checkout .order-total td,
+	.dz-summary__row--total td {
+		white-space: nowrap;
 	}
 
 	.dz-payment,
@@ -339,14 +394,14 @@
 		border: 0;
 		border-radius: var(--radius-control);
 		color: var(--color-text-on-accent);
-		display: flex;
+		display: inline-flex;
 		font-size: 0.9375rem;
 		font-weight: 650;
 		justify-content: center;
 		min-height: 2.875rem;
-		padding: 0.625rem 1.25rem;
+		padding: 0.625rem 1.5rem;
 		text-decoration: none;
-		width: 100%;
+		width: auto;
 	}
 
 	.wc-proceed-to-checkout .button:hover,
@@ -360,11 +415,14 @@
 		border-radius: var(--radius-control);
 		color: var(--color-text-on-accent);
 		cursor: pointer;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
 		font-size: 1rem;
 		font-weight: 650;
 		min-height: 3rem;
-		padding: 0.75rem 1.5rem;
-		width: 100%;
+		padding: 0.75rem 2rem;
+		width: auto;
 	}
 
 	#place_order:hover {

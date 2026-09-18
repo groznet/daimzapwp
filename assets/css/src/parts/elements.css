@@ -77,6 +77,22 @@
 		margin-left: auto;
 	}
 
+	/*
+	 * The add-to-cart confirmation reads better as a centred bar than as a band
+	 * pinned to the left edge of a wide catalog page.
+	 */
+	.dz-alert--success {
+		align-items: center;
+		justify-content: center;
+		margin-inline: auto;
+		max-width: 44rem;
+		text-align: center;
+	}
+
+	.dz-alert--success .button {
+		margin-left: 0;
+	}
+
 	/* --- Breadcrumbs ----------------------------------------------------- */
 	.dz-breadcrumb {
 		font-size: 0.8125rem;

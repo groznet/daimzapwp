@@ -55,12 +55,16 @@
 	--color-text-on-inverse-muted: #c3c9d2;
 	--color-text-on-accent: #ffffff;
 
-	/* Lines */
-	--color-border-subtle: #eceef1;
-	--color-border-base: #dde1e6;
-	--color-border-strong: #c3c9d2;
-	--color-border-emphasis: #11161e;
-	--color-border-inverse: #333d4d;
+	/* Lines — kept light; the structure should be felt, not drawn. */
+	--color-border-subtle: #f1f3f5;
+	--color-border-base: #e7eaee;
+	--color-border-strong: #d8dde3;
+	--color-border-emphasis: #aab3bf;
+	--color-border-inverse: #2b3543;
+
+	/* Form fields on cart and checkout: filled, not outlined. */
+	--color-field: #f2f4f6;
+	--color-field-focus: #e9ecf0;
 
 	/* Accent */
 	--color-accent: #c1121f;

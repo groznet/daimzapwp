@@ -57,7 +57,12 @@ do_action( 'woocommerce_before_cart' );
 
 									do_action( 'woocommerce_after_cart_item_name', $cart_item, $cart_item_key );
 
-									echo wc_get_formatted_cart_item_data( $cart_item ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped by WooCommerce.
+									/*
+									 * The formatted item data (variation attributes and custom item
+									 * meta) is deliberately not printed here: the cart row is kept to
+									 * name, article number, price and quantity. Anything a customer
+									 * needs beyond that belongs on the product page.
+									 */
 
 									if ( $_product->backorders_require_notification() && $_product->is_on_backorder( $cart_item['quantity'] ) ) {
 										echo wp_kses_post( apply_filters( 'woocommerce_cart_item_backorder_notification', '<p class="backorder_notification">' . esc_html__( 'Доступно под заказ', 'daimzap' ) . '</p>', $product_id ) );
