@@ -33,7 +33,7 @@
 	}
 
 	.dz-post-card {
-		border: 1px solid var(--color-ink-200);
+		border: 1px solid var(--color-border-base);
 		border-radius: var(--radius-card);
 		display: flex;
 		flex-direction: column;
@@ -71,17 +71,17 @@
 	}
 
 	.dz-post-card__title a:hover {
-		color: var(--color-signal-600);
+		color: var(--color-accent);
 	}
 
 	.dz-post-card__excerpt {
-		color: var(--color-ink-500);
+		color: var(--color-text-muted);
 		font-size: 0.875rem;
 		margin: 0;
 	}
 
 	.dz-entry__meta {
-		color: var(--color-ink-400);
+		color: var(--color-text-faint);
 		font-size: 0.8125rem;
 		margin: 0;
 	}
@@ -102,9 +102,9 @@
 
 	.dz-widget__title {
 		font-size: 0.875rem;
-		letter-spacing: 0.04em;
+		letter-spacing: var(--dz-label-tracking);
 		margin: 0 0 0.75rem;
-		text-transform: uppercase;
+		text-transform: var(--dz-label-transform);
 	}
 
 	.dz-widget ul {
@@ -126,7 +126,7 @@
 
 	/* --- Comments --------------------------------------------------------- */
 	.dz-comments {
-		border-top: 1px solid var(--color-ink-100);
+		border-top: 1px solid var(--color-border-subtle);
 		margin-top: 2.5rem;
 		padding-top: 2rem;
 	}
@@ -143,7 +143,7 @@
 	}
 
 	.dz-comments article {
-		border-bottom: 1px solid var(--color-ink-100);
+		border-bottom: 1px solid var(--color-border-subtle);
 		padding-block: 1rem;
 	}
 
@@ -170,7 +170,7 @@
 	.dz-comments .comment-form input[type="email"],
 	.dz-comments .comment-form input[type="url"],
 	.dz-comments .comment-form textarea {
-		border: 1px solid var(--color-ink-200);
+		border: 1px solid var(--color-border-base);
 		border-radius: var(--radius-control);
 		font: inherit;
 		padding: 0.5rem 0.75rem;
@@ -178,10 +178,10 @@
 	}
 
 	.dz-comments .comment-form .submit {
-		background: var(--color-ink-900);
+		background: var(--color-surface-inverse);
 		border: 0;
 		border-radius: var(--radius-control);
-		color: #fff;
+		color: var(--color-text-on-inverse);
 		cursor: pointer;
 		font-weight: 600;
 		min-height: 2.75rem;
@@ -195,7 +195,7 @@
 	}
 
 	.dz-404__code {
-		color: var(--color-ink-200);
+		color: var(--color-text-on-inverse-muted);
 		font-size: clamp(4rem, 3rem + 8vw, 8rem);
 		font-weight: 800;
 		line-height: 1;
@@ -232,7 +232,7 @@
 	}
 
 	.dz-wholesale__form {
-		border: 1px solid var(--color-ink-200);
+		border: 1px solid var(--color-border-base);
 		border-radius: var(--radius-card);
 		padding: 1.5rem;
 	}
@@ -260,9 +260,9 @@
 
 	.dz-steps li::before {
 		align-items: center;
-		background: var(--color-ink-900);
+		background: var(--color-surface-inverse);
 		border-radius: 50%;
-		color: #fff;
+		color: var(--color-text-on-inverse);
 		content: counter(dz-step);
 		display: flex;
 		font-size: 0.8125rem;
@@ -278,7 +278,7 @@
 	}
 
 	.dz-steps__text {
-		color: var(--color-ink-500);
+		color: var(--color-text-muted);
 		font-size: 0.875rem;
 	}
 
@@ -293,16 +293,16 @@
 	}
 
 	.dz-contact-card {
-		border: 1px solid var(--color-ink-200);
+		border: 1px solid var(--color-border-base);
 		border-radius: var(--radius-card);
 		padding: 1.25rem;
 	}
 
 	.dz-contact-card__label {
-		color: var(--color-ink-500);
+		color: var(--color-text-muted);
 		font-size: var(--text-2xs);
-		letter-spacing: 0.04em;
-		text-transform: uppercase;
+		letter-spacing: var(--dz-label-tracking);
+		text-transform: var(--dz-label-transform);
 	}
 
 	.dz-contact-card__value {

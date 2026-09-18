@@ -2,8 +2,8 @@
 @layer components {
 
 	.dz-hero {
-		background: var(--color-ink-900);
-		color: #fff;
+		background: var(--color-surface-inverse);
+		color: var(--color-text-on-inverse);
 		padding-block: 2.5rem 3rem;
 	}
 
@@ -16,21 +16,21 @@
 	}
 
 	.dz-hero__eyebrow {
-		color: var(--color-ink-400);
+		color: var(--color-text-faint);
 		font-size: var(--text-2xs);
 		letter-spacing: 0.1em;
 		margin: 0 0 0.75rem;
-		text-transform: uppercase;
+		text-transform: var(--dz-label-transform);
 	}
 
 	.dz-hero__title {
-		color: #fff;
+		color: var(--color-text-on-inverse);
 		font-size: clamp(1.75rem, 1.2rem + 2.2vw, 2.75rem);
 		margin: 0;
 	}
 
 	.dz-hero__subtitle {
-		color: var(--color-ink-300);
+		color: var(--color-text-on-inverse-muted);
 		margin: 0.875rem 0 0;
 		max-width: 52ch;
 	}
@@ -41,22 +41,23 @@
 	}
 
 	.dz-hero .dz-search__input {
-		background: #fff;
+		background: var(--color-surface-card);
 		border-color: transparent;
 		min-height: 3.25rem;
 	}
 
 	.dz-hero .dz-search__submit {
-		background: var(--color-signal-600);
+		background: var(--color-accent);
+		color: var(--color-text-on-accent);
 		min-height: 3.25rem;
 	}
 
 	.dz-hero .dz-search__submit:hover {
-		background: var(--color-signal-700);
+		background: var(--color-accent-hover);
 	}
 
 	.dz-hero .dz-search__hint {
-		color: var(--color-ink-400);
+		color: var(--color-text-faint);
 	}
 
 	.dz-hero__stats {
@@ -69,7 +70,7 @@
 	}
 
 	.dz-hero__stat-value {
-		color: #fff;
+		color: var(--color-text-on-inverse);
 		display: block;
 		font-size: 1.375rem;
 		font-weight: 700;
@@ -77,7 +78,7 @@
 	}
 
 	.dz-hero__stat-label {
-		color: var(--color-ink-400);
+		color: var(--color-text-faint);
 		font-size: 0.8125rem;
 	}
 
@@ -101,7 +102,7 @@
 
 	.dz-tile {
 		align-items: center;
-		border: 1px solid var(--color-ink-200);
+		border: 1px solid var(--color-border-base);
 		border-radius: var(--radius-card);
 		display: flex;
 		flex-direction: column;
@@ -115,7 +116,7 @@
 	}
 
 	.dz-tile:hover {
-		border-color: var(--color-ink-900);
+		border-color: var(--color-border-emphasis);
 	}
 
 	.dz-tile__media {
@@ -136,7 +137,7 @@
 	}
 
 	.dz-tile__count {
-		color: var(--color-ink-400);
+		color: var(--color-text-faint);
 		font-size: 0.75rem;
 	}
 
@@ -160,7 +161,7 @@
 
 	.dz-make {
 		align-items: center;
-		border: 1px solid var(--color-ink-200);
+		border: 1px solid var(--color-border-base);
 		border-radius: var(--radius-control);
 		display: flex;
 		font-size: 0.875rem;
@@ -173,7 +174,7 @@
 	}
 
 	.dz-make:hover {
-		border-color: var(--color-ink-900);
+		border-color: var(--color-border-emphasis);
 	}
 
 	/* --- Advantages ------------------------------------------------------- */
@@ -187,7 +188,7 @@
 	}
 
 	.dz-advantage__icon {
-		color: var(--color-signal-600);
+		color: var(--color-accent);
 		font-size: 1.25rem;
 	}
 
@@ -197,7 +198,7 @@
 	}
 
 	.dz-advantage__text {
-		color: var(--color-ink-500);
+		color: var(--color-text-muted);
 		font-size: 0.875rem;
 		margin: 0;
 	}
@@ -213,7 +214,7 @@
 	}
 
 	.dz-panel {
-		border: 1px solid var(--color-ink-200);
+		border: 1px solid var(--color-border-base);
 		border-radius: var(--radius-card);
 		display: flex;
 		flex-direction: column;
@@ -221,13 +222,13 @@
 	}
 
 	.dz-panel--dark {
-		background: var(--color-ink-900);
-		border-color: var(--color-ink-900);
-		color: var(--color-ink-300);
+		background: var(--color-surface-inverse);
+		border-color: var(--color-border-emphasis);
+		color: var(--color-text-on-inverse-muted);
 	}
 
 	.dz-panel--dark .dz-panel__title {
-		color: #fff;
+		color: var(--color-text-on-inverse);
 	}
 
 	.dz-panel__title {
@@ -254,7 +255,7 @@
 	}
 
 	.dz-panel__list i {
-		color: var(--color-signal-600);
+		color: var(--color-accent);
 		margin-top: 0.25rem;
 	}
 

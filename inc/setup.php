@@ -72,10 +72,10 @@ function daimzap_setup() {
 	add_image_size( 'daimzap-card', 480, 480, true );
 	add_image_size( 'daimzap-hero', 1440, 640, true );
 
-	// Editor styles use the compiled front-end stylesheet so the admin preview
-	// stays close to the real thing without a second build target.
+	// Editor styles use the active skin's compiled stylesheet so the admin
+	// preview stays close to the real thing without a second build target.
 	add_theme_support( 'editor-styles' );
-	add_editor_style( 'assets/css/main.css' );
+	add_editor_style( daimzap_skin_stylesheet() );
 }
 add_action( 'after_setup_theme', 'daimzap_setup' );
 

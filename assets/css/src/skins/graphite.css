@@ -1,0 +1,112 @@
+/**
+ * Skin: Графит (graphite)
+ *
+ * Light, premium, minimal. Cool graphite neutrals for structure, one signal red
+ * for actions and prices. Soft corners, generous whitespace, sentence-case
+ * labels. This is the default DaimZap look.
+ */
+
+@import "tailwindcss";
+
+/* Shared component layers — identical for every skin. */
+@import "../parts/base.css";
+@import "../parts/structure.css";
+@import "../parts/elements.css";
+@import "../parts/header.css";
+@import "../parts/footer.css";
+@import "../parts/home.css";
+@import "../parts/catalog.css";
+@import "../parts/product-card.css";
+@import "../parts/product-single.css";
+@import "../parts/cart-checkout.css";
+@import "../parts/account.css";
+@import "../parts/content.css";
+
+@source "../../../../**/*.php";
+
+@theme {
+	/* Neutral ramp — light to dark. */
+	--color-ink-50: #f6f7f9;
+	--color-ink-100: #eceef1;
+	--color-ink-200: #dde1e6;
+	--color-ink-300: #c3c9d2;
+	--color-ink-400: #8d97a5;
+	--color-ink-500: #667283;
+	--color-ink-600: #4a5568;
+	--color-ink-700: #333d4d;
+	--color-ink-800: #1d2531;
+	--color-ink-900: #11161e;
+
+	/* Surfaces */
+	--color-surface-page: #ffffff;
+	--color-surface-card: #ffffff;
+	--color-surface-sunken: #f6f7f9;
+	--color-surface-inverse: #11161e;
+	--color-surface-inverse-2: #333d4d;
+	--color-surface-media: #ffffff;
+
+	/* Text */
+	--color-text-strong: #11161e;
+	--color-text-base: #1d2531;
+	--color-text-muted: #667283;
+	/* 4.6:1 on white — the old #8d97a5 was 3.0:1 and failed AA. */
+	--color-text-faint: #6b7686;
+	--color-text-on-inverse: #ffffff;
+	--color-text-on-inverse-muted: #c3c9d2;
+	--color-text-on-accent: #ffffff;
+
+	/* Lines */
+	--color-border-subtle: #eceef1;
+	--color-border-base: #dde1e6;
+	--color-border-strong: #c3c9d2;
+	--color-border-emphasis: #11161e;
+	--color-border-inverse: #333d4d;
+
+	/* Accent */
+	--color-accent: #c1121f;
+	--color-accent-hover: #9e0e19;
+	--color-accent-soft: #fdf2f3;
+
+	/* Stock states */
+	--color-stock-in: #15803d;
+	--color-stock-in-bg: #ecfdf3;
+	--color-stock-low: #b45309;
+	--color-stock-low-bg: #fffbeb;
+	--color-stock-out: #64748b;
+	--color-stock-out-bg: #f1f5f9;
+
+	/* Typography */
+	--font-sans: "Inter", "Segoe UI", system-ui, -apple-system, "Roboto", "Helvetica Neue", Arial, sans-serif;
+	--font-mono: ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+	--font-data: ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+	--text-2xs: 0.6875rem;
+	--text-2xs--line-height: 1rem;
+
+	/* Personality knobs the components read. */
+	--dz-body-size: 0.9375rem;
+	--dz-heading-weight: 650;
+	--dz-heading-tracking: -0.015em;
+	--dz-label-transform: uppercase;
+	--dz-label-tracking: 0.04em;
+	--dz-price-family: var(--font-sans);
+	--dz-price-tracking: normal;
+
+	/* Shape */
+	--radius-card: 6px;
+	--radius-control: 4px;
+
+	--shadow-card: 0 1px 2px rgb(17 22 30 / 0.05);
+	--shadow-raised: 0 8px 24px -12px rgb(17 22 30 / 0.24);
+
+	--container-site: 1400px;
+}
+
+/*
+ * Unlayered so it outranks the body background that theme.json emits through
+ * the global-styles stylesheet (unlayered CSS always beats @layer).
+ */
+body.dz-skin-graphite {
+	background-color: var(--color-surface-page);
+	color: var(--color-text-base);
+}

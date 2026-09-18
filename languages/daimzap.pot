@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DaimZap 1.0.0\n"
 "Report-Msgid-Bugs-To: https://github.com/groznet/daimzapwp/issues\n"
-"POT-Creation-Date: 2026-09-18 15:42+0000\n"
+"POT-Creation-Date: 2026-09-18 16:19+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -98,7 +98,7 @@ msgstr ""
 msgid "Перейти к содержимому"
 msgstr ""
 
-#: header.php:39 inc/assets.php:93
+#: header.php:39 inc/assets.php:95
 msgid "Открыть меню"
 msgstr ""
 
@@ -106,11 +106,11 @@ msgstr ""
 msgid "Основное меню"
 msgstr ""
 
-#: inc/assets.php:94 template-parts/header/drawer.php:17
+#: inc/assets.php:96 template-parts/header/drawer.php:17
 msgid "Закрыть меню"
 msgstr ""
 
-#: inc/assets.php:95
+#: inc/assets.php:97
 msgid "Показать фильтры"
 msgstr ""
 
@@ -213,6 +213,38 @@ msgstr ""
 
 #: inc/setup.php:136
 msgid "Дополнительная колонка в подвале сайта."
+msgstr ""
+
+#: inc/skins.php:29
+msgid "Графит"
+msgstr ""
+
+#: inc/skins.php:30
+msgid "Светлое премиальное оформление: графитовые нейтральные тона, красный акцент, мягкие скругления."
+msgstr ""
+
+#: inc/skins.php:34
+msgid "Терминал"
+msgstr ""
+
+#: inc/skins.php:35
+msgid "Тёмное техническое оформление: почти чёрные панели, янтарный акцент, моноширинные артикулы и цены, прямые углы."
+msgstr ""
+
+#: inc/skins.php:131
+msgid "DaimZap: оформление"
+msgstr ""
+
+#: inc/skins.php:133
+msgid "Визуальный стиль сайта. Вёрстка и функциональность одинаковы, меняется только оформление."
+msgstr ""
+
+#: inc/skins.php:149
+msgid "Стиль оформления"
+msgstr ""
+
+#: inc/skins.php:204
+msgid "Оформление:"
 msgstr ""
 
 #: inc/template-functions.php:76
@@ -736,23 +768,23 @@ msgstr ""
 msgid "Меню не назначено. Создайте меню в разделе «Внешний вид → Меню»."
 msgstr ""
 
-#: template-parts/header/search-form.php:32
+#: template-parts/header/search-form.php:35
 msgid "Артикул, название детали, марка или модель"
 msgstr ""
 
-#: template-parts/header/search-form.php:33
+#: template-parts/header/search-form.php:36
 msgid "Поиск по сайту"
 msgstr ""
 
-#: template-parts/header/search-form.php:39
+#: template-parts/header/search-form.php:42
 msgid "Поиск запчастей"
 msgstr ""
 
-#: template-parts/header/search-form.php:56 template-parts/header/search-form.php:57
+#: template-parts/header/search-form.php:59 template-parts/header/search-form.php:60
 msgid "Найти"
 msgstr ""
 
-#: template-parts/header/search-form.php:67
+#: template-parts/header/search-form.php:70
 msgid "Точный артикул откроет карточку товара сразу. Можно искать и по названию детали."
 msgstr ""
 

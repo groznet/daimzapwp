@@ -1,0 +1,125 @@
+/**
+ * Skin: Терминал (terminal)
+ *
+ * A dark, technical counterpart to the graphite skin — the parts catalogue as a
+ * workshop console rather than a retail storefront. Near-black panels, hairline
+ * rules, square corners, amber as the single signal colour, and monospaced
+ * numerals for every piece of data a mechanic actually reads: article numbers,
+ * stock counts, prices.
+ *
+ * The markup is identical to the graphite skin. Everything below is either a
+ * token value or a component rule that genuinely differs; nothing here fights
+ * the shared layers with brute force.
+ */
+
+@import "tailwindcss";
+
+/* Shared component layers — identical for every skin. */
+@import "../parts/base.css";
+@import "../parts/structure.css";
+@import "../parts/elements.css";
+@import "../parts/header.css";
+@import "../parts/footer.css";
+@import "../parts/home.css";
+@import "../parts/catalog.css";
+@import "../parts/product-card.css";
+@import "../parts/product-single.css";
+@import "../parts/cart-checkout.css";
+@import "../parts/account.css";
+@import "../parts/content.css";
+
+/* Loaded last so its component rules win inside @layer components. */
+@import "../parts/skin-terminal.css";
+
+@source "../../../../**/*.php";
+
+@theme {
+	/*
+	 * Neutral ramp, inverted: -50 is the darkest surface and -900 the lightest
+	 * text. Keeping the scale's direction consistent with its use (low = furthest
+	 * back, high = most prominent) is what lets the shared components work
+	 * unchanged in both skins.
+	 */
+	--color-ink-50: #0b0e12;
+	--color-ink-100: #11151b;
+	--color-ink-200: #1a2029;
+	--color-ink-300: #2a323d;
+	--color-ink-400: #6f7c8d;
+	--color-ink-500: #8793a4;
+	--color-ink-600: #a5b0bf;
+	--color-ink-700: #c2cad6;
+	--color-ink-800: #dee3ea;
+	--color-ink-900: #f2f5f8;
+
+	/* Surfaces */
+	--color-surface-page: #0b0e12;
+	--color-surface-card: #12171e;
+	--color-surface-sunken: #0e1319;
+	--color-surface-inverse: #05070a;
+	--color-surface-inverse-2: #1a2029;
+	/* Product photography still needs a light plate to read against. */
+	--color-surface-media: #f2f5f8;
+
+	/* Text */
+	--color-text-strong: #f2f5f8;
+	--color-text-base: #dee3ea;
+	--color-text-muted: #8793a4;
+	/* 4.6:1 on the page surface. */
+	--color-text-faint: #6f7c8d;
+	--color-text-on-inverse: #f2f5f8;
+	--color-text-on-inverse-muted: #8793a4;
+	--color-text-on-accent: #0b0e12;
+
+	/* Lines */
+	--color-border-subtle: #1a2029;
+	--color-border-base: #232b36;
+	--color-border-strong: #2f3846;
+	--color-border-emphasis: #ffb01f;
+	--color-border-inverse: #1a2029;
+
+	/* Accent — safety amber, the one colour that carries meaning. */
+	--color-accent: #ffb01f;
+	--color-accent-hover: #ffc24d;
+	--color-accent-soft: #241c08;
+
+	/* Stock states, tuned for a dark background. */
+	--color-stock-in: #4ade80;
+	--color-stock-in-bg: #0d1f14;
+	--color-stock-low: #fbbf24;
+	--color-stock-low-bg: #241c08;
+	--color-stock-out: #8a95a6;
+	--color-stock-out-bg: #151a21;
+
+	/* Typography */
+	--font-sans: "Inter", "Segoe UI", system-ui, -apple-system, "Roboto", "Helvetica Neue", Arial, sans-serif;
+	--font-mono: ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+	/* Data — SKUs, counts, prices — is monospaced everywhere in this skin. */
+	--font-data: ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+	--text-2xs: 0.6875rem;
+	--text-2xs--line-height: 1rem;
+
+	/* Personality knobs: denser, flatter, more technical. */
+	--dz-body-size: 0.875rem;
+	--dz-heading-weight: 600;
+	--dz-heading-tracking: -0.01em;
+	--dz-label-transform: uppercase;
+	--dz-label-tracking: 0.12em;
+	--dz-price-family: var(--font-data);
+	--dz-price-tracking: -0.02em;
+
+	/* Shape: square everything. */
+	--radius-card: 0px;
+	--radius-control: 0px;
+
+	--shadow-card: none;
+	--shadow-raised: 0 16px 40px -16px rgb(0 0 0 / 0.7);
+
+	--container-site: 1480px;
+}
+
+/* See the note in graphite.css — unlayered so theme.json cannot outrank it. */
+body.dz-skin-terminal {
+	background-color: var(--color-surface-page);
+	color: var(--color-text-base);
+}

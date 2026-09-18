@@ -2,18 +2,18 @@
 @layer components {
 
 	.dz-footer {
-		background: var(--color-ink-900);
-		color: var(--color-ink-300);
+		background: var(--color-surface-inverse);
+		color: var(--color-text-on-inverse-muted);
 		margin-top: 3rem;
 	}
 
 	.dz-footer a {
-		color: var(--color-ink-200);
+		color: var(--color-text-on-inverse-muted);
 		text-decoration: none;
 	}
 
 	.dz-footer a:hover {
-		color: #fff;
+		color: var(--color-text-on-inverse);
 		text-decoration: underline;
 	}
 
@@ -36,20 +36,25 @@
 	}
 
 	.dz-footer__title {
-		color: #fff;
+		color: var(--color-text-on-inverse);
 		font-size: 0.8125rem;
-		letter-spacing: 0.06em;
+		letter-spacing: var(--dz-label-tracking);
 		margin: 0 0 0.875rem;
-		text-transform: uppercase;
+		text-transform: var(--dz-label-transform);
 	}
 
 	.dz-footer__list {
 		display: grid;
-		gap: 0.5rem;
 		font-size: 0.875rem;
+		gap: 0.25rem;
 		list-style: none;
 		margin: 0;
 		padding: 0;
+	}
+
+	.dz-footer__list a {
+		display: inline-block;
+		padding-block: 0.25rem;
 	}
 
 	.dz-footer__contact {
@@ -59,13 +64,13 @@
 	}
 
 	.dz-footer__contact i {
-		color: var(--color-ink-500);
+		color: var(--color-text-muted);
 		margin-top: 0.25rem;
 		width: 1rem;
 	}
 
 	.dz-footer__about {
-		color: var(--color-ink-400);
+		color: var(--color-text-faint);
 		font-size: 0.875rem;
 		margin: 0.75rem 0 0;
 		max-width: 38ch;
@@ -79,7 +84,7 @@
 
 	.dz-footer__social a {
 		align-items: center;
-		border: 1px solid var(--color-ink-700);
+		border: 1px solid var(--color-border-inverse);
 		border-radius: var(--radius-control);
 		display: inline-flex;
 		height: 2.5rem;
@@ -88,13 +93,13 @@
 	}
 
 	.dz-footer__social a:hover {
-		background: var(--color-ink-800);
+		background: var(--color-surface-inverse-2);
 		border-color: var(--color-ink-500);
 	}
 
 	.dz-footer__bar {
-		border-top: 1px solid var(--color-ink-800);
-		color: var(--color-ink-500);
+		border-top: 1px solid var(--color-border-inverse);
+		color: var(--color-text-muted);
 		display: flex;
 		flex-wrap: wrap;
 		font-size: 0.8125rem;
@@ -112,11 +117,11 @@
 	}
 
 	.dz-footer .dz-widget__title {
-		color: #fff;
+		color: var(--color-text-on-inverse);
 		font-size: 0.8125rem;
-		letter-spacing: 0.06em;
+		letter-spacing: var(--dz-label-tracking);
 		margin: 0 0 0.875rem;
-		text-transform: uppercase;
+		text-transform: var(--dz-label-transform);
 	}
 
 	.dz-footer .dz-widget ul {

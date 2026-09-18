@@ -34,6 +34,7 @@ function daimzap_require( $relative_path ) {
 }
 
 daimzap_require( 'inc/setup.php' );
+daimzap_require( 'inc/skins.php' );
 daimzap_require( 'inc/assets.php' );
 daimzap_require( 'inc/template-tags.php' );
 daimzap_require( 'inc/template-functions.php' );

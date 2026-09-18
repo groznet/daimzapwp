@@ -1,0 +1,487 @@
+/**
+ * Terminal skin: component rules that differ beyond token values.
+ *
+ * Loaded last within @layer components, so these win on source order without
+ * specificity tricks. Everything here is a deliberate difference in behaviour
+ * or structure — colour and shape alone are handled by the tokens.
+ */
+@layer components {
+
+	/* --- Header: a fixed console bar rather than a light retail header ----- */
+	.dz-header {
+		background: var(--color-surface-inverse);
+		border-bottom-color: var(--color-border-base);
+	}
+
+	.dz-topbar {
+		background: transparent;
+		border-bottom: 1px solid var(--color-border-subtle);
+		font-family: var(--font-data);
+		font-size: 0.75rem;
+		letter-spacing: 0.02em;
+	}
+
+	.dz-brand__name {
+		font-family: var(--font-data);
+		font-weight: 700;
+		letter-spacing: -0.04em;
+	}
+
+	.dz-brand__tagline {
+		font-family: var(--font-data);
+	}
+
+	/* Search reads as a command input: a prompt glyph, monospaced entry. */
+	.dz-search__row {
+		border: 1px solid var(--color-border-strong);
+	}
+
+	.dz-search__input {
+		background: var(--color-surface-page);
+		border: 0;
+		font-family: var(--font-data);
+		letter-spacing: -0.01em;
+	}
+
+	.dz-search__input:focus {
+		background: var(--color-surface-page);
+		box-shadow: inset 0 0 0 1px var(--color-accent);
+	}
+
+	.dz-search__row::before {
+		align-items: center;
+		background: var(--color-surface-page);
+		color: var(--color-accent);
+		content: "›";
+		display: flex;
+		font-family: var(--font-data);
+		font-size: 1.125rem;
+		padding-inline: 0.75rem 0;
+	}
+
+	.dz-search__submit {
+		background: var(--color-accent);
+		color: var(--color-text-on-accent);
+		font-family: var(--font-data);
+		letter-spacing: var(--dz-label-tracking);
+		text-transform: uppercase;
+	}
+
+	.dz-search__submit:hover {
+		background: var(--color-accent-hover);
+	}
+
+	.dz-search__hint {
+		font-family: var(--font-data);
+		font-size: 0.6875rem;
+	}
+
+	/* --- Navigation: underlined active state, no soft hovers -------------- */
+	.dz-nav {
+		border-top-color: var(--color-border-subtle);
+	}
+
+	.dz-menu__link {
+		border-bottom: 2px solid transparent;
+		font-size: 0.8125rem;
+		letter-spacing: 0.02em;
+		text-transform: var(--dz-label-transform);
+	}
+
+	.dz-menu__item.current-menu-item > .dz-menu__link,
+	.dz-menu__item.current-menu-ancestor > .dz-menu__link {
+		border-bottom-color: var(--color-accent);
+		color: var(--color-text-strong);
+	}
+
+	.dz-action:hover {
+		background: var(--color-surface-inverse-2);
+	}
+
+	.dz-action__label {
+		font-family: var(--font-data);
+		letter-spacing: var(--dz-label-tracking);
+		text-transform: uppercase;
+	}
+
+	/* --- Hero: a technical plate with a faint measurement grid ------------- */
+	.dz-hero {
+		background-color: var(--color-surface-inverse);
+		background-image:
+			repeating-linear-gradient(to right, var(--color-border-subtle) 0 1px, transparent 1px 72px),
+			repeating-linear-gradient(to bottom, var(--color-border-subtle) 0 1px, transparent 1px 72px);
+		border-bottom: 1px solid var(--color-border-base);
+	}
+
+	.dz-hero__eyebrow {
+		color: var(--color-accent);
+		font-family: var(--font-data);
+	}
+
+	.dz-hero__title {
+		letter-spacing: -0.03em;
+	}
+
+	.dz-hero__stat-value {
+		font-family: var(--font-data);
+		letter-spacing: -0.03em;
+	}
+
+	.dz-hero__stat-label {
+		font-family: var(--font-data);
+		font-size: 0.6875rem;
+		letter-spacing: var(--dz-label-tracking);
+		text-transform: uppercase;
+	}
+
+	.dz-hero .dz-search__input {
+		background: var(--color-surface-card);
+	}
+
+	.dz-hero .dz-search__row::before {
+		background: var(--color-surface-card);
+	}
+
+	/* --- Section headings get a rule and an index marker ------------------- */
+	.dz-section__title {
+		align-items: baseline;
+		display: flex;
+		font-family: var(--font-data);
+		gap: 0.625rem;
+		letter-spacing: -0.02em;
+	}
+
+	.dz-section__title::before {
+		color: var(--color-accent);
+		content: "//";
+		font-size: 0.875em;
+	}
+
+	/* --- Product card: a data row with a photo, not a retail tile ---------- */
+	.dz-card {
+		background: var(--color-surface-card);
+		transition: border-color 0.12s linear;
+	}
+
+	.dz-card:hover {
+		border-color: var(--color-accent);
+		box-shadow: none;
+	}
+
+	.dz-card--out {
+		background: var(--color-surface-sunken);
+	}
+
+	.dz-card--out .dz-card__media img {
+		opacity: 0.4;
+	}
+
+	.dz-card__sku {
+		color: var(--color-accent);
+		letter-spacing: 0.04em;
+	}
+
+	.dz-card__title {
+		font-weight: 550;
+		letter-spacing: -0.005em;
+	}
+
+	.dz-card__compat {
+		border-top: 1px solid var(--color-border-subtle);
+		font-family: var(--font-data);
+		font-size: 0.6875rem;
+		padding-top: 0.5rem;
+	}
+
+	.dz-card__foot {
+		border-top: 1px solid var(--color-border-subtle);
+		padding-top: 0.625rem;
+	}
+
+	.dz-card__action .button,
+	.dz-card__action .dz-btn {
+		background: transparent;
+		border: 1px solid var(--color-border-strong);
+		color: var(--color-text-base);
+		font-family: var(--font-data);
+		font-size: 0.75rem;
+		letter-spacing: var(--dz-label-tracking);
+		text-transform: uppercase;
+	}
+
+	.dz-card__action .button:hover,
+	.dz-card__action .dz-btn:hover {
+		background: var(--color-accent);
+		border-color: var(--color-accent);
+		color: var(--color-text-on-accent);
+	}
+
+	/* --- Stock: a status dot, the way a terminal reports state ------------- */
+	.dz-badge {
+		background: transparent;
+		border: 1px solid currentColor;
+		font-family: var(--font-data);
+		padding: 0.25rem 0.4375rem;
+	}
+
+	.dz-badge--in { color: var(--color-stock-in); }
+	.dz-badge--low { color: var(--color-stock-low); }
+	.dz-badge--out { color: var(--color-stock-out); }
+
+	.dz-badge--sale {
+		background: var(--color-accent);
+		border-color: var(--color-accent);
+		color: var(--color-text-on-accent);
+	}
+
+	/* --- Buttons: square, monospaced, uppercase --------------------------- */
+	.dz-btn {
+		font-family: var(--font-data);
+		font-size: 0.8125rem;
+		letter-spacing: var(--dz-label-tracking);
+		text-transform: uppercase;
+		transition: background-color 0.12s linear, border-color 0.12s linear, color 0.12s linear;
+	}
+
+	.dz-btn--dark {
+		background-color: transparent;
+		border-color: var(--color-border-strong);
+		color: var(--color-text-strong);
+	}
+
+	.dz-btn--dark:hover {
+		background-color: var(--color-accent);
+		border-color: var(--color-accent);
+		color: var(--color-text-on-accent);
+	}
+
+	.dz-btn--ghost {
+		background-color: transparent;
+		border-color: var(--color-border-base);
+		color: var(--color-text-muted);
+	}
+
+	.dz-btn--ghost:hover {
+		border-color: var(--color-accent);
+		color: var(--color-text-strong);
+	}
+
+	.dz-link {
+		font-family: var(--font-data);
+		font-size: 0.875em;
+		text-decoration-thickness: 1px;
+	}
+
+	/* --- Forms: inset fields with a hard focus ring ------------------------ */
+	.dz-input,
+	.dz-select,
+	.dz-textarea {
+		background-color: var(--color-surface-page);
+		font-family: var(--font-data);
+	}
+
+	.dz-input:focus,
+	.dz-select:focus,
+	.dz-textarea:focus {
+		border-color: var(--color-accent);
+	}
+
+	.dz-label {
+		font-family: var(--font-data);
+		font-size: 0.75rem;
+		letter-spacing: var(--dz-label-tracking);
+		text-transform: uppercase;
+	}
+
+	/* --- Catalog chrome --------------------------------------------------- */
+	.dz-catalog-header {
+		background: var(--color-surface-sunken);
+		border-bottom-color: var(--color-border-base);
+	}
+
+	.dz-catalog-header__meta {
+		font-family: var(--font-data);
+		font-size: 0.8125rem;
+	}
+
+	.dz-toolbar__count {
+		font-family: var(--font-data);
+		font-size: 0.8125rem;
+	}
+
+	.dz-filter__summary {
+		font-family: var(--font-data);
+		font-size: 0.8125rem;
+		letter-spacing: var(--dz-label-tracking);
+		text-transform: uppercase;
+	}
+
+	.dz-filter__option {
+		font-family: var(--font-data);
+		font-size: 0.8125rem;
+	}
+
+	.dz-filter__option:hover {
+		background: var(--color-surface-sunken);
+	}
+
+	.dz-filter__option.is-active {
+		color: var(--color-accent);
+	}
+
+	.dz-active-filter {
+		background: transparent;
+		border: 1px solid var(--color-accent);
+		color: var(--color-accent);
+		font-family: var(--font-data);
+	}
+
+	.dz-active-filter__key {
+		color: var(--color-text-muted);
+	}
+
+	.dz-chip {
+		font-family: var(--font-data);
+		font-size: 0.75rem;
+	}
+
+	.dz-chip--active,
+	.dz-account-nav .is-active a {
+		background: var(--color-accent);
+		border-color: var(--color-accent);
+		color: var(--color-text-on-accent);
+	}
+
+	/* --- Panels and tables: ruled, dense ----------------------------------- */
+	.dz-tile:hover,
+	.dz-make:hover,
+	.dz-gallery__thumb[aria-current="true"] {
+		border-color: var(--color-accent);
+	}
+
+	.dz-make {
+		font-family: var(--font-data);
+		font-size: 0.8125rem;
+		letter-spacing: 0.02em;
+	}
+
+	.dz-panel--dark {
+		background: var(--color-surface-sunken);
+		border-color: var(--color-accent);
+	}
+
+	.dz-specs__row dd,
+	.dz-summary__row td,
+	.dz-cart-item__price,
+	.dz-cart-item__subtotal,
+	.dz-order-status {
+		font-family: var(--font-data);
+		font-variant-numeric: tabular-nums;
+	}
+
+	.dz-summary {
+		background: var(--color-surface-sunken);
+	}
+
+	.dz-summary__row--total {
+		color: var(--color-text-strong);
+	}
+
+	.dz-order-status {
+		background: transparent;
+		border: 1px solid var(--color-border-strong);
+		font-size: 0.6875rem;
+		letter-spacing: var(--dz-label-tracking);
+		text-transform: uppercase;
+	}
+
+	/* --- Tabs: a segmented console control -------------------------------- */
+	.dz-tabs__list {
+		border-bottom-color: var(--color-border-base);
+	}
+
+	.dz-tabs__tab {
+		font-family: var(--font-data);
+		font-size: 0.8125rem;
+		letter-spacing: var(--dz-label-tracking);
+		text-transform: uppercase;
+	}
+
+	.dz-tabs__tab[aria-selected="true"] {
+		border-bottom-color: var(--color-accent);
+		color: var(--color-accent);
+	}
+
+	/* --- Footer: continuous with the page, separated by a rule ------------ */
+	.dz-footer {
+		background: var(--color-surface-inverse);
+		border-top: 1px solid var(--color-border-base);
+	}
+
+	.dz-footer__title {
+		color: var(--color-accent);
+		font-family: var(--font-data);
+	}
+
+	.dz-footer__bar {
+		border-top-color: var(--color-border-subtle);
+		font-family: var(--font-data);
+		font-size: 0.75rem;
+	}
+
+	/* --- Drawers sit on the page surface, not a floating white sheet ------ */
+	.dz-drawer,
+	.dz-sidebar.is-open,
+	.dz-menu__submenu {
+		background: var(--color-surface-card);
+		border-color: var(--color-border-base);
+	}
+
+	.dz-overlay {
+		background: rgb(0 0 0 / 0.72);
+	}
+
+	/* --- Empty states read as system messages ----------------------------- */
+	.dz-empty {
+		background: var(--color-surface-sunken);
+	}
+
+	.dz-empty__title {
+		font-family: var(--font-data);
+		letter-spacing: -0.02em;
+	}
+
+	/*
+	 * WooCommerce ships a few widgets the theme does not own — the country
+	 * select at checkout and the password strength meter. They are styled by
+	 * woocommerce-general.css for a light page, so they get a dark pass here.
+	 */
+	.select2-container--default .select2-selection--single,
+	.select2-container--default .select2-search--dropdown .select2-search__field,
+	.select2-dropdown {
+		background: var(--color-surface-page);
+		border-color: var(--color-border-base);
+		border-radius: 0;
+		color: var(--color-text-base);
+	}
+
+	.select2-container--default .select2-selection--single .select2-selection__rendered {
+		color: var(--color-text-base);
+	}
+
+	.select2-container--default .select2-results__option--highlighted[aria-selected],
+	.select2-container--default .select2-results__option[data-selected="true"] {
+		background: var(--color-accent);
+		color: var(--color-text-on-accent);
+	}
+
+	.woocommerce-password-strength {
+		border-radius: 0;
+	}
+
+	/* --- 404 ------------------------------------------------------------- */
+	.dz-404__code {
+		color: var(--color-border-base);
+		font-family: var(--font-data);
+	}
+}

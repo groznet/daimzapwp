@@ -47,11 +47,13 @@ function daimzap_load_font_awesome() {
  * @return void
  */
 function daimzap_enqueue_assets() {
+	$skin_stylesheet = daimzap_skin_stylesheet();
+
 	wp_enqueue_style(
 		'daimzap-main',
-		get_theme_file_uri( 'assets/css/main.css' ),
+		get_theme_file_uri( $skin_stylesheet ),
 		array(),
-		daimzap_asset_version( 'assets/css/main.css' )
+		daimzap_asset_version( $skin_stylesheet )
 	);
 
 	wp_style_add_data( 'daimzap-main', 'rtl', 'replace' );

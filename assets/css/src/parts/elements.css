@@ -11,24 +11,24 @@
 		letter-spacing: 0.02em;
 		line-height: 1;
 		padding: 0.3125rem 0.5rem;
-		text-transform: uppercase;
+		text-transform: var(--dz-label-transform);
 		white-space: nowrap;
 	}
 
 	.dz-badge--in { background: var(--color-stock-in-bg); color: var(--color-stock-in); }
 	.dz-badge--low { background: var(--color-stock-low-bg); color: var(--color-stock-low); }
 	.dz-badge--out { background: var(--color-stock-out-bg); color: var(--color-stock-out); }
-	.dz-badge--sale { background: var(--color-signal-600); color: #fff; }
+	.dz-badge--sale { background: var(--color-accent); color: var(--color-text-on-accent); }
 
 	.dz-badge__icon {
 		font-size: 0.75em;
 	}
 
 	.dz-chip {
-		background: var(--color-ink-50);
-		border: 1px solid var(--color-ink-200);
+		background: var(--color-surface-sunken);
+		border: 1px solid var(--color-border-base);
 		border-radius: 3px;
-		color: var(--color-ink-700);
+		color: var(--color-text-base);
 		display: inline-block;
 		font-size: 0.8125rem;
 		line-height: 1.2;
@@ -37,21 +37,21 @@
 	}
 
 	a.dz-chip:hover {
-		border-color: var(--color-ink-400);
-		color: var(--color-ink-900);
+		border-color: var(--color-border-strong);
+		color: var(--color-text-strong);
 	}
 
 	.dz-chip--active {
-		background: var(--color-ink-900);
-		border-color: var(--color-ink-900);
-		color: #fff;
+		background: var(--color-surface-inverse);
+		border-color: var(--color-border-emphasis);
+		color: var(--color-text-on-inverse);
 	}
 
 	.dz-sku {
-		background: var(--color-ink-50);
+		background: var(--color-surface-sunken);
 		border-radius: 3px;
-		color: var(--color-ink-700);
-		font-family: var(--font-mono);
+		color: var(--color-text-base);
+		font-family: var(--font-data);
 		font-size: 0.8125rem;
 		letter-spacing: 0.02em;
 		padding: 0.125rem 0.375rem;
@@ -59,7 +59,7 @@
 
 	/* --- Alerts ---------------------------------------------------------- */
 	.dz-alert {
-		border: 1px solid var(--color-ink-200);
+		border: 1px solid var(--color-border-base);
 		border-left-width: 3px;
 		border-radius: var(--radius-control);
 		display: flex;
@@ -70,7 +70,7 @@
 	}
 
 	.dz-alert--success { background: var(--color-stock-in-bg); border-left-color: var(--color-stock-in); }
-	.dz-alert--error { background: var(--color-signal-50); border-left-color: var(--color-signal-600); }
+	.dz-alert--error { background: var(--color-accent-soft); border-left-color: var(--color-accent); }
 	.dz-alert--info { background: var(--color-ink-50); border-left-color: var(--color-ink-400); }
 
 	.dz-alert .button {
@@ -85,7 +85,7 @@
 
 	.dz-breadcrumb__list {
 		align-items: center;
-		color: var(--color-ink-500);
+		color: var(--color-text-muted);
 		display: flex;
 		flex-wrap: wrap;
 		gap: 0.375rem;
@@ -97,7 +97,7 @@
 	.dz-breadcrumb__item + .dz-breadcrumb__item::before {
 		content: "/";
 		margin-right: 0.375rem;
-		color: var(--color-ink-300);
+		color: var(--color-text-on-inverse-muted);
 	}
 
 	.dz-breadcrumb a {
@@ -105,13 +105,13 @@
 	}
 
 	.dz-breadcrumb a:hover {
-		color: var(--color-ink-900);
+		color: var(--color-text-strong);
 		text-decoration: underline;
 	}
 
 	/* --- Page header ----------------------------------------------------- */
 	.dz-page-header {
-		border-bottom: 1px solid var(--color-ink-100);
+		border-bottom: 1px solid var(--color-border-subtle);
 		padding-block: 1.25rem 1.5rem;
 	}
 
@@ -120,7 +120,7 @@
 	}
 
 	.dz-page-header__subtitle {
-		color: var(--color-ink-500);
+		color: var(--color-text-muted);
 		margin: 0.5rem 0 0;
 		max-width: 60ch;
 	}
@@ -132,18 +132,18 @@
 
 	.dz-table th,
 	.dz-table td {
-		border-bottom: 1px solid var(--color-ink-100);
+		border-bottom: 1px solid var(--color-border-subtle);
 		padding: 0.75rem 0.5rem;
 		text-align: left;
 		vertical-align: top;
 	}
 
 	.dz-table th {
-		color: var(--color-ink-500);
+		color: var(--color-text-muted);
 		font-size: var(--text-2xs);
 		font-weight: 650;
-		letter-spacing: 0.04em;
-		text-transform: uppercase;
+		letter-spacing: var(--dz-label-tracking);
+		text-transform: var(--dz-label-transform);
 	}
 
 	/* --- Pagination ------------------------------------------------------ */
@@ -163,9 +163,9 @@
 	.woocommerce-pagination .page-numbers a,
 	.woocommerce-pagination .page-numbers span {
 		align-items: center;
-		border: 1px solid var(--color-ink-200);
+		border: 1px solid var(--color-border-base);
 		border-radius: var(--radius-control);
-		color: var(--color-ink-700);
+		color: var(--color-text-base);
 		display: inline-flex;
 		justify-content: center;
 		min-height: 2.5rem;
@@ -176,9 +176,9 @@
 
 	.dz-pagination .page-numbers.current,
 	.woocommerce-pagination .page-numbers span.current {
-		background: var(--color-ink-900);
-		border-color: var(--color-ink-900);
-		color: #fff;
+		background: var(--color-surface-inverse);
+		border-color: var(--color-border-emphasis);
+		color: var(--color-text-on-inverse);
 	}
 
 	.woocommerce-pagination li {
@@ -187,14 +187,14 @@
 
 	/* --- Empty states ---------------------------------------------------- */
 	.dz-empty {
-		border: 1px dashed var(--color-ink-200);
+		border: 1px dashed var(--color-border-base);
 		border-radius: var(--radius-card);
 		padding: 3rem 1.5rem;
 		text-align: center;
 	}
 
 	.dz-empty__icon {
-		color: var(--color-ink-300);
+		color: var(--color-text-on-inverse-muted);
 		font-size: 2rem;
 	}
 
@@ -203,7 +203,7 @@
 	}
 
 	.dz-empty__text {
-		color: var(--color-ink-500);
+		color: var(--color-text-muted);
 		margin: 0 auto 1.5rem;
 		max-width: 46ch;
 	}
@@ -231,7 +231,7 @@
 	.dz-prose li + li { margin-top: 0.375rem; }
 
 	.dz-prose a {
-		color: var(--color-signal-600);
+		color: var(--color-accent);
 		text-decoration: underline;
 	}
 
@@ -241,7 +241,7 @@
 
 	.dz-prose th,
 	.dz-prose td {
-		border: 1px solid var(--color-ink-200);
+		border: 1px solid var(--color-border-base);
 		padding: 0.5rem 0.75rem;
 	}
 }

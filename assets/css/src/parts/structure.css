@@ -49,8 +49,8 @@
 	}
 
 	.dz-skip-link {
-		background: var(--color-ink-900);
-		color: #fff;
+		background: var(--color-surface-inverse);
+		color: var(--color-text-on-inverse);
 		left: 0.5rem;
 		padding: 0.75rem 1rem;
 		position: fixed;
@@ -82,31 +82,31 @@
 	}
 
 	.dz-btn--primary {
-		background-color: var(--color-signal-600);
-		color: #fff;
+		background-color: var(--color-accent);
+		color: var(--color-text-on-accent);
 	}
 
 	.dz-btn--primary:hover {
-		background-color: var(--color-signal-700);
+		background-color: var(--color-accent-hover);
 	}
 
 	.dz-btn--dark {
-		background-color: var(--color-ink-900);
-		color: #fff;
+		background-color: var(--color-surface-inverse);
+		color: var(--color-text-on-inverse);
 	}
 
 	.dz-btn--dark:hover {
-		background-color: var(--color-ink-700);
+		background-color: var(--color-surface-inverse-2);
 	}
 
 	.dz-btn--ghost {
-		background-color: #fff;
-		border-color: var(--color-ink-200);
-		color: var(--color-ink-800);
+		background-color: var(--color-surface-card);
+		border-color: var(--color-border-base);
+		color: var(--color-text-base);
 	}
 
 	.dz-btn--ghost:hover {
-		border-color: var(--color-ink-400);
+		border-color: var(--color-border-strong);
 	}
 
 	.dz-btn--block {
@@ -126,13 +126,13 @@
 	}
 
 	.dz-link {
-		color: var(--color-signal-600);
+		color: var(--color-accent);
 		font-weight: 550;
 		text-decoration: underline;
 	}
 
 	.dz-link:hover {
-		color: var(--color-signal-700);
+		color: var(--color-accent-hover);
 	}
 
 	/* --- Forms ----------------------------------------------------------- */
@@ -142,7 +142,7 @@
 	}
 
 	.dz-label {
-		color: var(--color-ink-700);
+		color: var(--color-text-base);
 		display: block;
 		font-size: 0.8125rem;
 		font-weight: 600;
@@ -150,16 +150,16 @@
 	}
 
 	.dz-required {
-		color: var(--color-signal-600);
+		color: var(--color-accent);
 	}
 
 	.dz-input,
 	.dz-select,
 	.dz-textarea {
-		background-color: #fff;
-		border: 1px solid var(--color-ink-200);
+		background-color: var(--color-surface-card);
+		border: 1px solid var(--color-border-base);
 		border-radius: var(--radius-control);
-		color: var(--color-ink-900);
+		color: var(--color-text-strong);
 		display: block;
 		font: inherit;
 		min-height: 2.75rem;
@@ -175,11 +175,11 @@
 	.dz-input:focus,
 	.dz-select:focus,
 	.dz-textarea:focus {
-		border-color: var(--color-ink-400);
+		border-color: var(--color-border-strong);
 	}
 
 	.dz-input::placeholder {
-		color: var(--color-ink-400);
+		color: var(--color-text-faint);
 	}
 
 	.dz-checkbox {
@@ -190,14 +190,14 @@
 	}
 
 	.dz-checkbox input {
-		accent-color: var(--color-signal-600);
+		accent-color: var(--color-accent);
 		height: 1.125rem;
 		margin-top: 0.125rem;
 		width: 1.125rem;
 	}
 
 	.dz-help {
-		color: var(--color-ink-500);
+		color: var(--color-text-muted);
 		font-size: 0.8125rem;
 		margin-top: 0.375rem;
 	}

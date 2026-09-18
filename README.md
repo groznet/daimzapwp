@@ -5,6 +5,9 @@ The frontend is built specifically for parts discovery — SKU-first search, veh
 make/model compatibility filtering, retail and wholesale paths. WooCommerce runs
 the commerce engine underneath without showing through in the UI.
 
+The theme ships **two complete visual directions** over identical markup — see
+[Skins](#skins).
+
 - **Requires:** WordPress 6.4+, WooCommerce 8.0+, PHP 7.4+
 - **Text domain:** `daimzap` (interface language: Russian)
 - **Template `.pot`:** `languages/daimzap.pot`
@@ -46,6 +49,56 @@ store does not already have them (see below) and flushes rewrite rules once.
 7. **Widgets** — the *Сайдбар каталога* area sits below the built-in catalog
    filters, for WooCommerce filter widgets. *Сайдбар блога* and *Подвал* are
    ordinary widget areas.
+
+## Skins
+
+Two finished looks, switchable in **Appearance → Customize → DaimZap: оформление**.
+Templates, markup and behaviour are identical; only the compiled stylesheet and a
+body class change. That is the whole point of the arrangement — a second look
+costs a token file, not a second theme.
+
+| Skin | Slug | Character |
+|------|------|-----------|
+| **Графит** (default) | `graphite` | Light and premium. Cool graphite neutrals, red signal accent, soft 6px corners, generous whitespace, sentence-case labels. Reads as a considered retail catalog. |
+| **Терминал** | `terminal` | Dark and technical. Near-black panels, amber signal accent, square corners, hairline rules, monospaced SKUs / prices / counts, uppercase tracked labels, a faint measurement grid behind the hero. Reads as a workshop parts console. |
+
+Product photography keeps a light plate in both skins (`--color-surface-media`),
+because parts are shot on white.
+
+### Reviewing them side by side
+
+Logged-in users who can edit theme options get a **«Оформление»** menu in the
+admin bar that switches skins on the current page via a `?dz-skin=` parameter.
+The parameter is capability-gated, so an anonymous visitor cannot force a skin
+into a shared page cache.
+
+### How a skin is built
+
+Skins are token sets, not stylesheet forks. Every component file under
+`assets/css/src/parts/` is written against semantic tokens:
+
+```
+--color-surface-page / -card / -sunken / -inverse / -media
+--color-text-strong / -base / -muted / -faint / -on-inverse / -on-accent
+--color-border-subtle / -base / -strong / -emphasis / -inverse
+--color-accent / -accent-hover / -accent-soft
+--radius-card / --radius-control / --shadow-card / --shadow-raised
+--font-sans / --font-data / --dz-price-family
+--dz-label-transform / --dz-label-tracking / --dz-heading-weight / --dz-body-size
+```
+
+A skin entry (`assets/css/src/skins/<slug>.css`) imports the shared parts and
+supplies values for those tokens. Where a skin needs to differ structurally — the
+terminal skin's command-prompt search field, its status-dot stock badges, its
+`//` section markers — it adds one extra layer (`parts/skin-terminal.css`) loaded
+last, which wins on source order without specificity tricks.
+
+To add a third skin: copy a skin entry, change the token values, register it via
+the `daimzap_skins` filter, and add a build script.
+
+**Note on `theme.json`:** its `styles` reference the same tokens
+(`var(--color-surface-page, #ffffff)`) rather than literal colours, so the block
+editor's global styles follow the active skin instead of fighting it.
 
 ## Vehicle compatibility
 
@@ -114,16 +167,19 @@ results.
 
 ```bash
 npm install
-npm run dev     # watch
-npm run build   # minified build into assets/css/main.css
+npm run build          # both skins, minified
+npm run build:graphite # one skin
+npm run dev            # watch graphite
+npm run dev:terminal   # watch terminal
 ```
 
-Tailwind CSS v4 with a CSS-first config. Design tokens live in
-`assets/css/src/main.css` (`@theme`), and component classes are split by area
-under `assets/css/src/parts/`. Tailwind utilities are used for layout in markup;
-anything that repeats becomes a `dz-` component class.
+Tailwind CSS v4 with a CSS-first config. Each skin under
+`assets/css/src/skins/` is an entry point that imports the shared component
+layers from `assets/css/src/parts/` and supplies the token values. Tailwind
+utilities are used for layout in markup; anything that repeats becomes a `dz-`
+component class.
 
-**Commit the built `assets/css/main.css`** — the theme is deployed by file copy
+**Commit the built `assets/css/skin-*.css`** — the theme is deployed by file copy
 and must not require a build on the server.
 
 ### Structure
@@ -132,6 +188,7 @@ and must not require a build on the server.
 functions.php          bootstrap only; every feature lives in inc/
 inc/
   setup.php            theme supports, menus, image sizes, widget areas
+  skins.php            skin registry, resolution, Customizer picker, admin bar
   assets.php           conditional enqueueing, WooCommerce asset trimming
   template-tags.php    icons, breadcrumbs, pagination, catalog context helpers
   template-functions.php  small core filters
@@ -149,7 +206,11 @@ inc/
 template-parts/        header/, home/, catalog/, content/
 page-templates/        wholesale, contacts
 woocommerce/           template overrides (only where the design requires one)
-assets/                css/src → css/main.css, js/, images/
+assets/
+  css/src/parts/       shared component layers, written against semantic tokens
+  css/src/skins/       one entry per skin (token values + any extra layer)
+  css/skin-*.css       compiled output, committed
+  js/, images/
 ```
 
 ### JavaScript
@@ -198,6 +259,8 @@ account, apply a price tier or push the lead into 1С, without touching the them
 
 | Filter                              | Purpose                                  |
 |-------------------------------------|------------------------------------------|
+| `daimzap_skins`                     | Register or replace skins                 |
+| `daimzap_current_skin`              | Force a skin programmatically             |
 | `daimzap_vehicle_attributes`        | Attribute slugs, labels and archive bases |
 | `daimzap_products_per_page`         | Catalog page size (default 24)            |
 | `daimzap_loop_columns`              | Grid columns (default 4)                  |
