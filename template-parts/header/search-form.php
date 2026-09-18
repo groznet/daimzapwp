@@ -16,8 +16,11 @@
 
 defined( 'ABSPATH' ) || exit;
 
-$context   = isset( $args['context'] ) ? $args['context'] : 'header';
-$search_id = 'dz-search-' . $context . '-' . wp_rand( 100, 999 );
+$context = isset( $args['context'] ) ? $args['context'] : 'header';
+
+// Several search forms can render on one page (header, mobile, hero), so the
+// label/input pairing needs a unique but deterministic id.
+$search_id = wp_unique_id( 'dz-search-' . sanitize_html_class( $context ) . '-' );
 
 // Catalog-facing forms search products; the blog sidebar and non-product result
 // pages keep searching the whole site.

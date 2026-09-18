@@ -140,13 +140,14 @@ function daimzap_search_include_skus( $search, $query ) {
 
 	$id_list = implode( ',', array_map( 'absint', $ids ) );
 
-	// $search arrives wrapped in "AND (...)"; widen that group with the SKU hits.
-	return preg_replace(
-		'/^\s*AND\s*\(/',
-		" AND ( {$wpdb->posts}.ID IN ({$id_list}) OR ",
-		$search,
-		1
-	);
+	/*
+	 * $search is a chain of "AND ( ... )" groups — one per search word. Wrapping
+	 * the whole chain, rather than widening the first group, keeps the meaning
+	 * exact for multi-word searches: a SKU hit matches on its own, and the
+	 * original word-by-word matching is untouched. The leading "1=1" makes the
+	 * chain valid on its own, since $search starts with "AND".
+	 */
+	return " AND ( {$wpdb->posts}.ID IN ({$id_list}) OR ( 1=1 {$search} ) )";
 }
 add_filter( 'posts_search', 'daimzap_search_include_skus', 10, 2 );
 
