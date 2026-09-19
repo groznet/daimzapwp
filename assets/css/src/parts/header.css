@@ -202,12 +202,19 @@
 		border-color: var(--color-border-strong);
 	}
 
+	/*
+	 * The submit sits on the same filled plate as the input rather than on a dark
+	 * slab: the field reads as one control, and the magnifier stays legible
+	 * (--color-text-base on --color-field is 9.8:1) without the button shouting.
+	 * Red is kept for the hover, where it means "this is the action".
+	 */
 	.dz-search__submit {
 		align-items: center;
-		background: var(--color-surface-inverse);
-		border: 0;
+		background: var(--color-field);
+		border: 1px solid var(--color-border-base);
+		border-left: 0;
 		border-radius: 0 var(--radius-control) var(--radius-control) 0;
-		color: var(--color-text-on-inverse);
+		color: var(--color-text-base);
 		cursor: pointer;
 		display: inline-flex;
 		gap: 0.5rem;
@@ -216,11 +223,20 @@
 		justify-content: center;
 		min-height: 2.75rem;
 		padding-inline: 1rem;
+		transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
 	}
 
 	.dz-search__submit:hover {
 		background: var(--color-accent);
-		color: var(--color-text-on-accent);
+		border-color: var(--color-accent);
+		color: var(--color-btn-primary-text);
+	}
+
+	.dz-search__submit:focus-visible {
+		outline: 2px solid var(--color-focus-ring);
+		outline-offset: 2px;
+		position: relative;
+		z-index: 1;
 	}
 
 	.dz-search__submit-label {

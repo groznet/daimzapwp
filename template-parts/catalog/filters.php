@@ -206,3 +206,30 @@ if ( daimzap_stock_filter_active() ) {
 		</a>
 	</div>
 </aside>
+
+<?php
+/*
+ * Floating filter trigger for small screens. The toolbar button scrolls out of
+ * reach once browsing starts, so this one stays pinned while the grid scrolls.
+ * It drives the same drawer through the existing `data-dz-filters-open` hook —
+ * no extra script, and it is hidden from assistive tech while the drawer is
+ * open because the drawer's own close button takes over there.
+ */
+?>
+<button
+	type="button"
+	class="dz-filters-fab"
+	aria-expanded="false"
+	aria-controls="dz-filters"
+	data-dz-filters-open
+>
+	<?php daimzap_icon( 'sliders' ); ?>
+	<span><?php esc_html_e( 'Фильтры', 'daimzap' ); ?></span>
+	<?php
+	$dz_active_filter_count = count( daimzap_current_filter_args() );
+
+	if ( $dz_active_filter_count > 0 ) :
+		?>
+		<span class="dz-filters-fab__count"><?php echo esc_html( number_format_i18n( $dz_active_filter_count ) ); ?></span>
+	<?php endif; ?>
+</button>

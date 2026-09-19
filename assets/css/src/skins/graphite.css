@@ -12,6 +12,8 @@
 @import "../parts/base.css";
 @import "../parts/structure.css";
 @import "../parts/elements.css";
+/* Woo baseline sits before the page parts so those keep the final word. */
+@import "../parts/woocommerce.css";
 @import "../parts/header.css";
 @import "../parts/footer.css";
 @import "../parts/home.css";
@@ -41,12 +43,12 @@
 	--color-surface-page: #ffffff;
 	--color-surface-card: #ffffff;
 	--color-surface-sunken: #f6f7f9;
-	--color-surface-inverse: #11161e;
-	--color-surface-inverse-2: #333d4d;
+	--color-surface-inverse: #232b36;
+	--color-surface-inverse-2: #394452;
 	--color-surface-media: #ffffff;
 
 	/* Text */
-	--color-text-strong: #11161e;
+	--color-text-strong: #1a212b;
 	--color-text-base: #1d2531;
 	--color-text-muted: #667283;
 	/* 4.6:1 on white — the old #8d97a5 was 3.0:1 and failed AA. */
@@ -66,10 +68,35 @@
 	--color-field: #f2f4f6;
 	--color-field-focus: #e9ecf0;
 
-	/* Accent */
+	/* Accent — one signal red, used sparingly for actions and prices. */
 	--color-accent: #c1121f;
 	--color-accent-hover: #9e0e19;
 	--color-accent-soft: #fdf2f3;
+
+	/*
+	 * Button system. Every button in the theme — including the WooCommerce ones —
+	 * resolves to one of these four intents, so background, text, hover and
+	 * disabled states stay in step. Red is an accent here, never a text colour on
+	 * a dark plate.
+	 */
+	--color-btn-primary-bg: var(--color-accent);
+	--color-btn-primary-bg-hover: var(--color-accent-hover);
+	--color-btn-primary-text: #ffffff;
+
+	--color-btn-dark-bg: var(--color-surface-inverse);
+	--color-btn-dark-bg-hover: #2f3947;
+	--color-btn-dark-text: #ffffff;
+
+	--color-btn-quiet-bg: var(--color-surface-card);
+	--color-btn-quiet-bg-hover: var(--color-surface-sunken);
+	--color-btn-quiet-border: var(--color-border-strong);
+	--color-btn-quiet-text: var(--color-text-base);
+
+	--color-btn-disabled-bg: var(--color-ink-100);
+	--color-btn-disabled-text: var(--color-text-faint);
+
+	/* Focus ring — one visible treatment across every control. */
+	--color-focus-ring: #2f6feb;
 
 	/* Stock states */
 	--color-stock-in: #15803d;

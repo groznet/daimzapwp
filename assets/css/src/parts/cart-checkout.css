@@ -390,10 +390,10 @@
 	.wc-proceed-to-checkout .button,
 	.wc-proceed-to-checkout .checkout-button {
 		align-items: center;
-		background: var(--color-accent);
+		background: var(--color-btn-primary-bg);
 		border: 0;
 		border-radius: var(--radius-control);
-		color: var(--color-text-on-accent);
+		color: var(--color-btn-primary-text);
 		display: inline-flex;
 		font-size: 0.9375rem;
 		font-weight: 650;
@@ -406,14 +406,22 @@
 
 	.wc-proceed-to-checkout .button:hover,
 	.wc-proceed-to-checkout .checkout-button:hover {
-		background: var(--color-accent-hover);
+		background: var(--color-btn-primary-bg-hover);
+		color: var(--color-btn-primary-text);
+	}
+
+	.wc-proceed-to-checkout .button:focus-visible,
+	.wc-proceed-to-checkout .checkout-button:focus-visible,
+	#place_order:focus-visible {
+		outline: 2px solid var(--color-focus-ring);
+		outline-offset: 2px;
 	}
 
 	#place_order {
-		background: var(--color-accent);
+		background: var(--color-btn-primary-bg);
 		border: 0;
 		border-radius: var(--radius-control);
-		color: var(--color-text-on-accent);
+		color: var(--color-btn-primary-text);
 		cursor: pointer;
 		display: inline-flex;
 		align-items: center;
@@ -426,7 +434,14 @@
 	}
 
 	#place_order:hover {
-		background: var(--color-accent-hover);
+		background: var(--color-btn-primary-bg-hover);
+		color: var(--color-btn-primary-text);
+	}
+
+	#place_order:disabled {
+		background: var(--color-btn-disabled-bg);
+		color: var(--color-btn-disabled-text);
+		cursor: not-allowed;
 	}
 
 	/* --- Order received --------------------------------------------------- */

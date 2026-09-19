@@ -81,32 +81,41 @@
 		transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
 	}
 
+	.dz-btn:focus-visible {
+		outline: 2px solid var(--color-focus-ring);
+		outline-offset: 2px;
+	}
+
 	.dz-btn--primary {
-		background-color: var(--color-accent);
-		color: var(--color-text-on-accent);
+		background-color: var(--color-btn-primary-bg);
+		color: var(--color-btn-primary-text);
 	}
 
 	.dz-btn--primary:hover {
-		background-color: var(--color-accent-hover);
+		background-color: var(--color-btn-primary-bg-hover);
+		color: var(--color-btn-primary-text);
 	}
 
 	.dz-btn--dark {
-		background-color: var(--color-surface-inverse);
-		color: var(--color-text-on-inverse);
+		background-color: var(--color-btn-dark-bg);
+		color: var(--color-btn-dark-text);
 	}
 
 	.dz-btn--dark:hover {
-		background-color: var(--color-surface-inverse-2);
+		background-color: var(--color-btn-dark-bg-hover);
+		color: var(--color-btn-dark-text);
 	}
 
 	.dz-btn--ghost {
-		background-color: var(--color-surface-card);
-		border-color: var(--color-border-base);
-		color: var(--color-text-base);
+		background-color: var(--color-btn-quiet-bg);
+		border-color: var(--color-btn-quiet-border);
+		color: var(--color-btn-quiet-text);
 	}
 
 	.dz-btn--ghost:hover {
-		border-color: var(--color-border-strong);
+		background-color: var(--color-btn-quiet-bg-hover);
+		border-color: var(--color-border-emphasis);
+		color: var(--color-text-strong);
 	}
 
 	.dz-btn--block {
@@ -121,8 +130,11 @@
 
 	.dz-btn[disabled],
 	.dz-btn.disabled {
+		background-color: var(--color-btn-disabled-bg);
+		border-color: transparent;
+		box-shadow: none;
+		color: var(--color-btn-disabled-text);
 		cursor: not-allowed;
-		opacity: 0.55;
 	}
 
 	.dz-link {

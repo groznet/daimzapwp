@@ -18,6 +18,8 @@
 @import "../parts/base.css";
 @import "../parts/structure.css";
 @import "../parts/elements.css";
+/* Woo baseline sits before the page parts so those keep the final word. */
+@import "../parts/woocommerce.css";
 @import "../parts/header.css";
 @import "../parts/footer.css";
 @import "../parts/home.css";
@@ -40,7 +42,7 @@
 	 * back, high = most prominent) is what lets the shared components work
 	 * unchanged in both skins.
 	 */
-	--color-ink-50: #0b0e12;
+	--color-ink-50: #0f141a;
 	--color-ink-100: #11151b;
 	--color-ink-200: #1a2029;
 	--color-ink-300: #2a323d;
@@ -52,10 +54,12 @@
 	--color-ink-900: #f2f5f8;
 
 	/* Surfaces */
-	--color-surface-page: #0b0e12;
+	--color-surface-page: #0f141a;
 	--color-surface-card: #12171e;
-	--color-surface-sunken: #0e1319;
-	--color-surface-inverse: #05070a;
+	--color-surface-sunken: #131920;
+	/* Was #05070a — effectively absolute black. Softened to stay a distinct
+	   plate without the hard edge. */
+	--color-surface-inverse: #0a0e13;
 	--color-surface-inverse-2: #1a2029;
 	/* Product photography still needs a light plate to read against. */
 	--color-surface-media: #f2f5f8;
@@ -68,7 +72,7 @@
 	--color-text-faint: #6f7c8d;
 	--color-text-on-inverse: #f2f5f8;
 	--color-text-on-inverse-muted: #8793a4;
-	--color-text-on-accent: #0b0e12;
+	--color-text-on-accent: #0f141a;
 
 	/* Lines — softened so the rules read as separation, not as boxes. */
 	--color-border-subtle: #161c24;
@@ -85,6 +89,25 @@
 	--color-accent: #ffb01f;
 	--color-accent-hover: #ffc24d;
 	--color-accent-soft: #241c08;
+
+	/* Same button contract as the graphite skin — only the values differ. */
+	--color-btn-primary-bg: var(--color-accent);
+	--color-btn-primary-bg-hover: var(--color-accent-hover);
+	--color-btn-primary-text: #0f141a;
+
+	--color-btn-dark-bg: #1c232c;
+	--color-btn-dark-bg-hover: #273038;
+	--color-btn-dark-text: #f2f5f8;
+
+	--color-btn-quiet-bg: transparent;
+	--color-btn-quiet-bg-hover: #171d25;
+	--color-btn-quiet-border: #28313d;
+	--color-btn-quiet-text: #dee3ea;
+
+	--color-btn-disabled-bg: #171d25;
+	--color-btn-disabled-text: #6f7c8d;
+
+	--color-focus-ring: #ffb01f;
 
 	/* Stock states, tuned for a dark background. */
 	--color-stock-in: #4ade80;

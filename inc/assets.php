@@ -150,18 +150,33 @@ function daimzap_resource_hints( $urls, $relation_type ) {
 add_filter( 'wp_resource_hints', 'daimzap_resource_hints', 10, 2 );
 
 /**
- * Drop WooCommerce stylesheets the theme fully re-implements.
+ * Drop the WooCommerce stylesheets the theme fully re-implements.
  *
  * `woocommerce-layout` and `woocommerce-smallscreen` are pure layout opinions
- * that fight the custom design, so they go. `woocommerce-general` is kept
- * because it styles components the theme does not own (password strength
- * meter, select2 in checkout, block notices from extensions).
+ * that fight the custom design.
+ *
+ * `woocommerce-general` goes too, and that is the change that makes the store
+ * stop looking like WooCommerce. It ships unlayered, so its defaults — the
+ * lilac `.button.alt` (#a46497), the tinted notice bars, the pill `a.remove`,
+ * the grey payment box — outranked every themed rule inside `@layer components`
+ * no matter how specific that rule was. The theme already owns the components
+ * it was being kept for (select2, the password strength meter, notices), and
+ * assets/css/src/parts/woocommerce.css supplies the few genuinely generic bits
+ * that stylesheet also carried: the AJAX block overlay, star ratings and the
+ * store notice.
+ *
+ * Sites running an extension that depends on Woo's own CSS can put it back with
+ * `add_filter( 'daimzap_keep_woocommerce_general', '__return_true' )`.
  *
  * @param array $styles Registered WooCommerce styles.
  * @return array
  */
 function daimzap_woocommerce_styles( $styles ) {
 	unset( $styles['woocommerce-layout'], $styles['woocommerce-smallscreen'] );
+
+	if ( ! apply_filters( 'daimzap_keep_woocommerce_general', false ) ) {
+		unset( $styles['woocommerce-general'] );
+	}
 
 	return $styles;
 }

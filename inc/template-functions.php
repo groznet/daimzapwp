@@ -14,6 +14,16 @@ defined( 'ABSPATH' ) || exit;
  * @return array
  */
 function daimzap_body_classes( $classes ) {
+	/*
+	 * A stable, skin-independent hook for the WooCommerce overrides in
+	 * assets/css/src/parts/woocommerce.css. WooCommerce ships `woocommerce-general`
+	 * unlayered, so it outranks anything the theme declares inside
+	 * `@layer components` no matter how specific that rule is. Prefixing the
+	 * overrides with this class puts them above Woo's defaults on specificity
+	 * alone, independent of stylesheet order.
+	 */
+	$classes[] = 'dz-theme';
+
 	if ( daimzap_is_catalog_context() ) {
 		$classes[] = 'dz-catalog';
 	}
