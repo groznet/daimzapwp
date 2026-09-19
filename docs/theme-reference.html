@@ -1,0 +1,744 @@
+<title>Theme File Atlas</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:wght@600;700&display=swap">
+<style>
+:root{
+  --ground:#f6f7f9; --surface:#ffffff; --surface-2:#f0f2f6;
+  --ink:#14181e; --ink-2:#39424f; --muted:#5f6a79; --faint:#828d9d;
+  --line:#e2e6ec; --line-2:#cfd6e0;
+  --wp:#2f6fae; --wp-bg:#eaf2fa;
+  --wc:#7a4ea8; --wc-bg:#f3edfa;
+  --prj:#b3121f; --prj-bg:#fdeef0;
+  --org:#6b7280; --org-bg:#eef0f3;
+  --req:#9a6200; --req-bg:#fdf3e2;
+  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --serif:"IBM Plex Serif",Georgia,serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ground:#0e1116; --surface:#161b22; --surface-2:#1c222b;
+  --ink:#e7ebf1; --ink-2:#bcc5d1; --muted:#8e99a8; --faint:#6e7988;
+  --line:#242c36; --line-2:#333d4a;
+  --wp:#79b0e6; --wp-bg:#14243a;
+  --wc:#c0a0e6; --wc-bg:#241b36;
+  --prj:#f08a95; --prj-bg:#331419;
+  --org:#9aa4b2; --org-bg:#1e242d;
+  --req:#e0ad5a; --req-bg:#2e2412;
+}}
+:root[data-theme="dark"]{
+  --ground:#0e1116; --surface:#161b22; --surface-2:#1c222b;
+  --ink:#e7ebf1; --ink-2:#bcc5d1; --muted:#8e99a8; --faint:#6e7988;
+  --line:#242c36; --line-2:#333d4a;
+  --wp:#79b0e6; --wp-bg:#14243a;
+  --wc:#c0a0e6; --wc-bg:#241b36;
+  --prj:#f08a95; --prj-bg:#331419;
+  --org:#9aa4b2; --org-bg:#1e242d;
+  --req:#e0ad5a; --req-bg:#2e2412;
+}
+*{box-sizing:border-box}
+body{background:var(--ground);color:var(--ink-2);font-family:var(--sans);font-size:15px;line-height:1.6;margin:0}
+h1,h2,h3,h4{color:var(--ink);font-family:var(--serif);font-weight:600;line-height:1.2;text-wrap:balance;margin:0}
+code,.mono{font-family:var(--mono)}
+a{color:var(--wp)}
+:where(a,button,input,select,summary,[tabindex]):focus-visible{outline:2px solid var(--wp);outline-offset:2px;border-radius:3px}
+.wrap{max-width:1180px;margin-inline:auto;padding-inline:16px}
+@media(min-width:800px){.wrap{padding-inline:28px}}
+
+/* ---- top bar ---- */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--surface);border-bottom:1px solid var(--line)}
+.bar-in{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;padding-block:10px}
+.brand{font-family:var(--serif);font-weight:700;font-size:17px;color:var(--ink);white-space:nowrap}
+.brand em{font-style:normal;color:var(--wc)}
+.search{flex:1 1 220px;min-width:0;position:relative}
+.search input{width:100%;font:500 14px var(--mono);color:var(--ink);background:var(--surface-2);border:1px solid var(--line);border-radius:5px;padding:8px 34px 8px 11px;min-height:38px}
+.search input::placeholder{color:var(--faint);font-weight:400}
+.search kbd{position:absolute;right:8px;top:50%;transform:translateY(-50%);font:500 11px var(--mono);color:var(--faint);border:1px solid var(--line-2);border-radius:3px;padding:1px 5px;pointer-events:none}
+.toggles{display:flex;flex-wrap:wrap;gap:6px}
+.tg{font:500 12px var(--sans);color:var(--muted);background:var(--surface-2);border:1px solid var(--line);border-radius:999px;padding:5px 11px;cursor:pointer;min-height:30px}
+.tg[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--surface)}
+.tg.wp[aria-pressed="true"]{background:var(--wp);border-color:var(--wp);color:#fff}
+.tg.wc[aria-pressed="true"]{background:var(--wc);border-color:var(--wc);color:#fff}
+.tg.prj[aria-pressed="true"]{background:var(--prj);border-color:var(--prj);color:#fff}
+
+/* ---- nav ---- */
+.nav{border-bottom:1px solid var(--line);background:var(--surface);overflow-x:auto}
+.nav ul{display:flex;gap:2px;list-style:none;margin:0;padding:0}
+.nav a{display:block;white-space:nowrap;font:500 13px var(--sans);color:var(--muted);text-decoration:none;padding:10px 12px;border-bottom:2px solid transparent}
+.nav a:hover{color:var(--ink)}
+
+/* ---- sections ---- */
+section{padding-block:38px;border-bottom:1px solid var(--line);scroll-margin-top:110px}
+.sec-head{margin-bottom:18px}
+.sec-n{font:600 11px var(--mono);letter-spacing:.14em;color:var(--faint);text-transform:uppercase;display:block;margin-bottom:6px}
+.sec-head h2{font-size:clamp(20px,1.1rem+1vw,27px)}
+.sec-head p{color:var(--muted);margin:8px 0 0;max-width:68ch}
+
+/* ---- badges ---- */
+.b{display:inline-flex;align-items:center;gap:4px;font:600 10px var(--mono);letter-spacing:.06em;text-transform:uppercase;padding:2px 6px;border-radius:3px;white-space:nowrap}
+.b-doc{background:var(--wp-bg);color:var(--wp)}
+.b-org{background:var(--org-bg);color:var(--org)}
+.b-prj{background:var(--prj-bg);color:var(--prj)}
+.b-wp{background:var(--wp-bg);color:var(--wp)}
+.b-wc{background:var(--wc-bg);color:var(--wc)}
+.b-req{background:var(--req-bg);color:var(--req)}
+body.hide-src .b-doc,body.hide-src .b-org,body.hide-src .b-prj{display:none}
+
+/* ---- legend ---- */
+.legend{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));margin-top:20px}
+.lg{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--line-2);border-radius:5px;padding:12px 14px}
+.lg.doc{border-left-color:var(--wp)} .lg.org{border-left-color:var(--org)} .lg.prj{border-left-color:var(--prj)}
+.lg p{margin:6px 0 0;font-size:13px;color:var(--muted)}
+
+/* ---- split ---- */
+.split{display:grid;gap:16px;grid-template-columns:1fr}
+@media(min-width:760px){.split{grid-template-columns:1fr 1fr}}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:16px 18px}
+.panel h3{font-size:16px;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.panel ul{margin:0;padding-left:18px;font-size:14px;color:var(--muted)}
+.panel li{margin-block:5px}
+.panel li code{color:var(--ink);font-size:13px}
+
+/* ---- roadmap ---- */
+.phases{display:grid;gap:12px}
+.phase{background:var(--surface);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.phase-h{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;padding:13px 16px;background:var(--surface-2);border-bottom:1px solid var(--line)}
+.phase-h b{font:700 12px var(--mono);color:var(--faint)}
+.phase-h h3{font-size:15px}
+.phase-h span{font-size:12.5px;color:var(--muted);margin-left:auto}
+.phase-b{padding:12px 16px;display:flex;flex-wrap:wrap;gap:6px}
+.chip{display:inline-flex;align-items:center;gap:6px;font:500 12.5px var(--mono);background:var(--surface-2);border:1px solid var(--line);border-radius:4px;padding:4px 8px;color:var(--ink-2)}
+.chip.req{border-color:var(--req);color:var(--req)}
+.chip.wc{border-color:var(--wc);color:var(--wc)}
+
+/* ---- hierarchy explorer ---- */
+.picker{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px}
+.pk{font:500 12.5px var(--sans);background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:6px 11px;cursor:pointer;color:var(--muted);min-height:32px}
+.pk[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--surface)}
+.chain-meta{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:14px 16px;margin-bottom:14px}
+.chain-meta p{margin:8px 0 0;font-size:13.5px;color:var(--muted)}
+.chain{list-style:none;margin:0;padding:0;counter-reset:st}
+.chain li{counter-increment:st;display:grid;grid-template-columns:26px 1fr;gap:12px;padding:11px 0;border-bottom:1px solid var(--line)}
+.chain li:last-child{border-bottom:0}
+.chain li::before{content:counter(st);font:600 11px var(--mono);color:var(--faint);background:var(--surface-2);border:1px solid var(--line);border-radius:3px;height:22px;display:flex;align-items:center;justify-content:center}
+.chain .fn{font:600 14px var(--mono);color:var(--ink);word-break:break-word}
+.chain .ds{font-size:13px;color:var(--muted);margin-top:3px}
+.chain li:last-child .fn{color:var(--wp)}
+.fallback{font-size:12.5px;color:var(--faint);margin-top:12px;font-style:italic}
+
+/* ---- file table ---- */
+.files{display:grid;gap:8px}
+.file{background:var(--surface);border:1px solid var(--line);border-radius:5px;padding:12px 14px}
+.file[hidden]{display:none}
+.file-h{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.file-h .fn{font:600 13.5px var(--mono);color:var(--ink)}
+.file p{margin:7px 0 0;font-size:13.5px;color:var(--muted)}
+.file .rel{margin-top:8px;font-size:12.5px;color:var(--faint);display:flex;flex-wrap:wrap;gap:4px 14px}
+.file .rel b{color:var(--muted);font-weight:600}
+.prj-row{margin-top:9px;padding-top:9px;border-top:1px dashed var(--line-2);font-size:12.5px;color:var(--prj);display:flex;gap:7px;align-items:flex-start}
+.prj-row code{font-size:12px;color:inherit}
+body.hide-prj .prj-row{display:none}
+.count{font:500 12px var(--mono);color:var(--faint);margin-bottom:10px}
+.empty{background:var(--surface);border:1px dashed var(--line-2);border-radius:6px;padding:26px;text-align:center;color:var(--muted);font-size:14px}
+
+/* ---- diagram ---- */
+figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:16px}
+figure .scroll{overflow-x:auto}
+figure svg{display:block;max-width:100%;height:auto;min-width:660px;color:var(--ink-2)}
+figcaption{font-size:13px;color:var(--muted);margin-top:12px;max-width:72ch}
+
+/* ---- hooks ---- */
+.hooks{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(290px,1fr))}
+.hk{background:var(--surface);border:1px solid var(--line);border-radius:5px;padding:12px 14px}
+.hk[hidden]{display:none}
+.hk h4{font:600 12.5px var(--mono);color:var(--ink);margin-bottom:8px;word-break:break-word}
+.hk ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:3px}
+.hk li{font:400 12px var(--mono);color:var(--muted);word-break:break-word}
+
+/* ---- notes ---- */
+.note{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--req);border-radius:5px;padding:13px 15px;font-size:13.5px;color:var(--muted);margin-top:14px}
+.note b{color:var(--ink)}
+table.kv{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:12px}
+table.kv th,table.kv td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+table.kv th{font:600 10.5px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--faint)}
+table.kv td code{font-size:12.5px;color:var(--ink)}
+.tbl-scroll{overflow-x:auto}
+footer{padding-block:28px;font-size:12.5px;color:var(--faint)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+<div class="bar">
+  <div class="wrap bar-in">
+    <span class="brand">Theme File <em>Atlas</em></span>
+    <div class="search">
+      <input id="q" type="search" placeholder="filter files, hooks, page types…" autocomplete="off" aria-label="Filter the reference">
+      <kbd>/</kbd>
+    </div>
+    <div class="toggles">
+      <button class="tg wp" id="t-wp" aria-pressed="true">WordPress</button>
+      <button class="tg wc" id="t-wc" aria-pressed="true">WooCommerce</button>
+      <button class="tg prj" id="t-prj" aria-pressed="true">DaimZap layer</button>
+      <button class="tg" id="t-src" aria-pressed="true">Sources</button>
+    </div>
+  </div>
+</div>
+
+<nav class="nav"><div class="wrap"><ul>
+  <li><a href="#orientation">Orientation</a></li>
+  <li><a href="#roadmap">Build order</a></li>
+  <li><a href="#hierarchy">Hierarchy explorer</a></li>
+  <li><a href="#mechanism">How a template is chosen</a></li>
+  <li><a href="#files">File reference</a></li>
+  <li><a href="#woo">WooCommerce integration</a></li>
+  <li><a href="#hooks">Hook points</a></li>
+</ul></div></nav>
+
+<main class="wrap">
+
+<section id="orientation">
+  <div class="sec-head">
+    <span class="sec-n">01 — Orientation</span>
+    <h2>Who owns what</h2>
+    <p>WordPress decides <em>which file renders a request</em>. WooCommerce decides <em>what goes inside</em> its own pages, and substitutes its templates into the WordPress decision. Almost every confusion in shop theming comes from mixing these two up.</p>
+  </div>
+
+  <div class="split">
+    <div class="panel">
+      <h3><span class="b b-wp">WordPress</span> owns</h3>
+      <ul>
+        <li>The query → template decision (<b>the template hierarchy</b>)</li>
+        <li>Every core template file: <code>index.php</code>, <code>single.php</code>, <code>page.php</code>, <code>archive.php</code>, <code>search.php</code>, <code>404.php</code>…</li>
+        <li>Template partials: <code>header.php</code>, <code>footer.php</code>, <code>sidebar.php</code>, <code>comments.php</code></li>
+        <li><code>functions.php</code>, <code>style.css</code> and the theme header</li>
+        <li>Child-theme overriding of parent files</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3><span class="b b-wc">WooCommerce</span> owns</h3>
+      <ul>
+        <li>Substituting its own templates into the WordPress decision</li>
+        <li>The markup <em>inside</em> shop pages, via its template files and hooks</li>
+        <li>The <code>product</code> post type and its taxonomies</li>
+        <li>Cart / checkout / account <b>content</b> — but not their templates, which are ordinary WordPress pages</li>
+        <li>Registered image sizes and the product gallery</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="note">
+    <b>The minimum theme.</b> The handbook states that with the exception of <code>index.php</code>, you choose whether to implement any particular template file — if no template matches, <code>index.php</code> is used. Separately, for acceptance into the WordPress.org directory it lists <code>style.css</code>, <code>index.php</code>, <code>comments.php</code> and a screenshot as required. <span class="b b-doc">Doc</span>
+  </div>
+
+  <div class="note" style="border-left-color:var(--wc)">
+    <b>Classic vs block themes.</b> The handbook says the hierarchy is <em>the same</em> for both — block themes simply use <code>.html</code> files instead of <code>.php</code>, and put template parts in a <code>parts/</code> folder. This atlas covers the classic (PHP) path in depth, because that is what DaimZap is. <span class="b b-doc">Doc</span>
+  </div>
+
+  <div class="legend">
+    <div class="lg doc"><span class="b b-doc">Doc</span><p>Stated in the WordPress Theme Handbook or the WooCommerce docs you supplied. Verifiable in those files.</p></div>
+    <div class="lg org"><span class="b b-org">Org</span><p>My organisation — grouping, sequencing, "build this first". Not claimed by either handbook.</p></div>
+    <div class="lg prj"><span class="b b-prj">Project</span><p>How the DaimZap theme actually implements it. A real file in the repo, not documentation.</p></div>
+  </div>
+</section>
+
+<section id="roadmap">
+  <div class="sec-head">
+    <span class="sec-n">02 — Build order</span>
+    <h2>What to create, and when</h2>
+    <p>The order below is mine <span class="b b-org">Org</span>; which files exist and what each does is documented <span class="b b-doc">Doc</span>. Amber means you cannot ship without it.</p>
+  </div>
+  <div class="phases" id="phases"></div>
+</section>
+
+<section id="hierarchy">
+  <div class="sec-head">
+    <span class="sec-n">03 — Hierarchy explorer</span>
+    <h2>Which file renders this page?</h2>
+    <p>Pick a page type. WordPress tries each candidate in order and uses the <b>first file that exists</b> in the theme; if none match, it falls through to <code>index.php</code>. Chains are quoted from the handbook's "Template Hierarchy In Detail". <span class="b b-doc">Doc</span></p>
+  </div>
+  <div class="picker" id="picker"></div>
+  <div class="chain-meta" id="chainMeta"></div>
+  <ol class="chain" id="chain"></ol>
+  <p class="fallback" id="chainFoot"></p>
+</section>
+
+<section id="mechanism">
+  <div class="sec-head">
+    <span class="sec-n">04 — Mechanism</span>
+    <h2>How a product page actually resolves</h2>
+    <p>The part that is genuinely non-obvious: WordPress picks a template, WooCommerce swaps it, and your theme folder gets the final word.</p>
+  </div>
+  <figure>
+    <div class="scroll">
+    <svg viewBox="0 0 880 340" role="img" aria-label="A request resolves through the WordPress template hierarchy, then WooCommerce substitutes its own template, then the theme's woocommerce folder overrides the plugin copy before rendering.">
+      <defs>
+        <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0,0 L10,5 L0,10 z" fill="currentColor"/>
+        </marker>
+      </defs>
+      <g fill="none" stroke="currentColor" stroke-width="1.4" marker-end="url(#ah)">
+        <line x1="128" y1="48" x2="196" y2="48"/>
+        <line x1="332" y1="48" x2="400" y2="48"/>
+        <line x1="470" y1="70" x2="470" y2="112"/>
+        <line x1="470" y1="176" x2="470" y2="218"/>
+        <line x1="600" y1="248" x2="676" y2="248"/>
+        <line x1="332" y1="248" x2="264" y2="248"/>
+      </g>
+      <g font-family="IBM Plex Sans, sans-serif" font-size="11.5" fill="currentColor">
+        <rect x="16" y="28" width="112" height="40" rx="4" fill="none" stroke="currentColor" stroke-width="1.2"/>
+        <text x="72" y="46" text-anchor="middle" font-weight="600">Request</text>
+        <text x="72" y="60" text-anchor="middle" font-size="10.5" opacity=".72">/product/ty-8113/</text>
+
+        <rect x="196" y="28" width="136" height="40" rx="4" fill="none" stroke="currentColor" stroke-width="1.2"/>
+        <text x="264" y="46" text-anchor="middle" font-weight="600">WP query</text>
+        <text x="264" y="60" text-anchor="middle" font-size="10.5" opacity=".72">post type = product</text>
+
+        <rect x="400" y="28" width="140" height="40" rx="4" fill="none" stroke="currentColor" stroke-width="1.2"/>
+        <text x="470" y="46" text-anchor="middle" font-weight="600">Hierarchy picks</text>
+        <text x="470" y="60" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10">single-product.php</text>
+
+        <rect x="356" y="112" width="228" height="64" rx="4" fill="none" stroke="#7a4ea8" stroke-width="1.6"/>
+        <text x="470" y="132" text-anchor="middle" font-weight="600" fill="#7a4ea8">WooCommerce substitution</text>
+        <text x="470" y="148" text-anchor="middle" font-size="10.5" fill="#7a4ea8" opacity=".9">WooCommerce substitutes its</text>
+        <text x="470" y="163" text-anchor="middle" font-size="10.5" fill="#7a4ea8" opacity=".9">own template for the shop views</text>
+
+        <rect x="332" y="218" width="268" height="60" rx="4" fill="none" stroke="currentColor" stroke-width="1.2"/>
+        <text x="466" y="238" text-anchor="middle" font-weight="600">Template lookup, in order</text>
+        <text x="466" y="254" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10">yourtheme/woocommerce/&lt;file&gt;</text>
+        <text x="466" y="268" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" opacity=".65">woocommerce/templates/&lt;file&gt;</text>
+
+        <rect x="676" y="228" width="188" height="40" rx="4" fill="none" stroke="currentColor" stroke-width="1.2"/>
+        <text x="770" y="245" text-anchor="middle" font-weight="600">Render</text>
+        <text x="770" y="259" text-anchor="middle" font-size="10.5" opacity=".72">do_action() hooks fire</text>
+
+        <rect x="76" y="228" width="188" height="40" rx="4" fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="4 3"/>
+        <text x="170" y="245" text-anchor="middle" font-weight="600">Child theme</text>
+        <text x="170" y="259" text-anchor="middle" font-size="10.5" opacity=".72">wins over the parent</text>
+
+        <text x="592" y="44" font-size="10.5" opacity=".72">first file</text>
+        <text x="592" y="57" font-size="10.5" opacity=".72">that exists</text>
+        <text x="484" y="96" font-size="10.5" fill="#7a4ea8">only for shop views</text>
+        <text x="484" y="203" font-size="10.5" opacity=".72">locate_template()</text>
+        <text x="16" y="120" font-size="10.5" opacity=".72">the hierarchy itself is filterable:</text>
+        <text x="16" y="135" font-family="IBM Plex Mono, monospace" font-size="10" opacity=".72">{$type}_template</text>
+        <text x="16" y="152" font-size="10.5" opacity=".72">e.g. single_template,</text>
+        <text x="16" y="166" font-size="10.5" opacity=".72">archive_template</text>
+        <text x="612" y="240" font-size="10.5" opacity=".72">first hit</text>
+        <text x="276" y="240" font-size="10.5" opacity=".72">checked first</text>
+      </g>
+    </svg>
+    </div>
+    <figcaption>Two independent overrides stack. WooCommerce replaces the template WordPress chose — but only for its own views — and your theme's <code>woocommerce/</code> folder replaces the plugin's copy of whatever it chose. Declaring theme support is what switches the second override on; without it the docs state WooCommerce falls back to shortcode-based "unsupported theme" rendering. The hierarchy itself can be filtered before any of this, through the documented <code>{$type}_template</code> filters in <code>get_query_template()</code>.
+    <br><br><span class="b b-doc">Doc</span> the hierarchy, the <code>{$type}_template</code> filters, <code>locate_template()</code>, the two-step theme-then-plugin lookup and the unsupported-theme fallback are all documented. <span class="b b-org">Org</span> arranging them into one flow is mine. Note the supplied documents never name the filter WooCommerce uses to substitute its templates, so this drawing does not either.</figcaption>
+  </figure>
+</section>
+
+<section id="files">
+  <div class="sec-head">
+    <span class="sec-n">05 — File reference</span>
+    <h2>Every file, what it does, what it depends on</h2>
+    <p>Filter with the search box above. Purposes are quoted or paraphrased from the handbooks; DaimZap rows show how this project implements each one.</p>
+  </div>
+  <p class="count" id="fileCount"></p>
+  <div class="files" id="fileList"></div>
+  <div class="empty" id="filesEmpty" hidden>Nothing matches that filter.</div>
+</section>
+
+<section id="woo">
+  <div class="sec-head">
+    <span class="sec-n">06 — WooCommerce</span>
+    <h2>Integrating WooCommerce</h2>
+    <p>Everything in this section is documented in the WooCommerce docs you supplied. <span class="b b-doc">Doc</span></p>
+  </div>
+
+  <div class="split">
+    <div class="panel">
+      <h3>Three ways to integrate</h3>
+      <ul>
+        <li><b>woocommerce.php</b> — duplicate <code>page.php</code>, replace the loop with <code>woocommerce_content()</code>. A catch-all for every WooCommerce taxonomy and post type. The docs note it takes priority over <code>archive-product.php</code>, which then cannot be overridden.</li>
+        <li><b>Hooks</b> — unhook <code>woocommerce_output_content_wrapper</code> from <code>woocommerce_before_main_content</code> / <code>woocommerce_after_main_content</code> and hook your own wrappers. The docs call this more robust and recommend it.</li>
+        <li><b>Template overrides</b> — the most control, the most maintenance: templates must be kept up to date with core.</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>Overriding a template</h3>
+      <ul>
+        <li>Copy the file into a <code>/woocommerce/</code> folder in your theme, keeping the same structure but <b>removing</b> the <code>/templates/</code> segment.</li>
+        <li>Documented example: <code>woocommerce/templates/emails/admin-new-order.php</code> → <code>yourtheme/woocommerce/emails/admin-new-order.php</code>.</li>
+        <li><b>Never delete a hook</b> from an overridden template — plugins hook into them.</li>
+        <li>Never edit the files inside the plugin; updates overwrite them.</li>
+        <li>Overrides only work if the theme declares WooCommerce support.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="note">
+    <b>Declaring support is not optional.</b> The docs state that template overrides are only enabled for themes that declare support; without it, WooCommerce "will assume the theme is not designed for WooCommerce compatibility and will use shortcode-based unsupported theme rendering to display the shop." Use <code>add_theme_support( 'woocommerce' )</code> on <code>after_setup_theme</code>, not <code>init</code>. <span class="b b-doc">Doc</span>
+  </div>
+
+  <h3 style="margin-top:26px;font-size:16px">Image sizes</h3>
+  <div class="tbl-scroll"><table class="kv">
+    <tr><th>Registered size</th><th>Used for</th><th>Default</th><th>Theme support key</th></tr>
+    <tr><td><code>woocommerce_thumbnail</code></td><td>Product grids (shop, archives)</td><td>300px wide, square cropped</td><td><code>thumbnail_image_width</code></td></tr>
+    <tr><td><code>woocommerce_single</code></td><td>Single product page</td><td>600px wide, uncropped</td><td><code>single_image_width</code></td></tr>
+    <tr><td><code>woocommerce_gallery_thumbnail</code></td><td>Gallery switcher below the main image</td><td>100×100, square cropped</td><td><code>gallery_thumbnail_image_width</code></td></tr>
+  </table></div>
+  <div class="note">If a theme declares these widths, the store owner can no longer change them — only the cropping ratio. <span class="b b-doc">Doc</span></div>
+
+  <h3 style="margin-top:26px;font-size:16px">Conditional tags</h3>
+  <div class="tbl-scroll"><table class="kv">
+    <tr><th>Function</th><th>True when</th></tr>
+    <tr><td><code>is_woocommerce()</code></td><td>On a page using WooCommerce templates. <b>Cart and checkout are excluded</b> — they are standard pages with shortcodes.</td></tr>
+    <tr><td><code>is_shop()</code></td><td>The product archive (shop) page</td></tr>
+    <tr><td><code>is_product_category()</code></td><td>A product category archive; accepts a slug or array of slugs</td></tr>
+    <tr><td><code>is_product_tag()</code></td><td>A product tag archive</td></tr>
+    <tr><td><code>is_product()</code></td><td>A single product page (wrapper for <code>is_singular</code>)</td></tr>
+    <tr><td><code>is_cart()</code> / <code>is_checkout()</code></td><td>The cart / checkout page</td></tr>
+    <tr><td><code>is_account_page()</code></td><td>Any customer account page</td></tr>
+    <tr><td><code>is_wc_endpoint_url()</code></td><td>A WooCommerce endpoint; optionally a named one, e.g. <code>'order-pay'</code></td></tr>
+  </table></div>
+  <div class="note">
+    <b>Timing trap.</b> Conditional tags only work after the <code>posts_selection</code> action — the <code>wp</code> hook is the first place they are usable. Called too early they silently return <code>false</code> rather than erroring. <span class="b b-doc">Doc</span>
+  </div>
+
+  <div class="note" style="border-left-color:var(--wc)">
+    <b>Dropping WooCommerce's stylesheet.</b> <code>add_filter( 'woocommerce_enqueue_styles', '__return_false' );</code> removes it entirely, giving you a blank canvas. The docs warn that styling WooCommerce from scratch is "no easy task". <span class="b b-doc">Doc</span>
+  </div>
+</section>
+
+<section id="hooks">
+  <div class="sec-head">
+    <span class="sec-n">07 — Hook points</span>
+    <h2>Which hooks fire where</h2>
+    <p>The WooCommerce docs stress hooks over overrides: "If you have overridden a template, you have to update the template any time the file changes. If you are using the hooks, you will only have to update if the hooks change, which happens much less frequently." <span class="b b-doc">Doc</span></p>
+    <p style="margin-top:8px">The map below is <span class="b b-prj">Project</span> — read out of DaimZap's own override files, so every hook listed is one this project verified as firing in that template. It is not a complete list of WooCommerce's hooks.</p>
+  </div>
+  <div class="hooks" id="hookList"></div>
+  <div class="empty" id="hooksEmpty" hidden>No hook group matches that filter.</div>
+</section>
+
+<footer class="">
+  <p>Built from the WordPress Theme Handbook and WooCommerce developer documentation supplied for this project, plus the DaimZap theme source. Claims badged <span class="b b-doc">Doc</span> come from those documents; <span class="b b-org">Org</span> marks my own sequencing; <span class="b b-prj">Project</span> marks this repository.</p>
+  <p style="margin-top:8px"><b>Known gap:</b> the WooCommerce documentation supplied names only six template file paths (<code>woocommerce.php</code>, <code>archive-product.php</code>, <code>taxonomy-product_cat.php</code>, <code>emails/admin-new-order.php</code> and two email block templates). It documents the override <em>mechanism</em> thoroughly but never lists the cart, checkout, account, loop or single-product template files. Those entries here are therefore badged <span class="b b-prj">Project</span> and come from this repo's own overrides — not from the documentation.</p>
+</footer>
+</main>
+
+<script>
+/* ------------------------------------------------------------------ *
+ * Data. `src` marks provenance: doc | org | prj.
+ * `own` marks the system that owns the file: wp | wc.
+ * ------------------------------------------------------------------ */
+
+const PHASES = [
+  { n:'Phase 0', t:'The theme exists', when:'Before anything renders',
+    items:[['style.css','req'],['index.php','req'],['functions.php',''],['screenshot.png','']] },
+  { n:'Phase 1', t:'Page furniture', when:'As soon as you want a real layout',
+    items:[['header.php',''],['footer.php',''],['sidebar.php',''],['searchform.php','']] },
+  { n:'Phase 2', t:'The content templates', when:'Once posts and pages need their own look',
+    items:[['front-page.php',''],['home.php',''],['single.php',''],['page.php',''],['archive.php',''],['search.php',''],['404.php',''],['comments.php','req']] },
+  { n:'Phase 3', t:'Turn the shop on', when:'The moment WooCommerce is activated',
+    items:[["add_theme_support('woocommerce')",'wc'],['wrapper hooks','wc'],['woocommerce/archive-product.php','wc']] },
+  { n:'Phase 4', t:'Shop templates', when:'Only where the design actually needs different markup',
+    items:[['woocommerce/content-product.php','wc'],['woocommerce/content-single-product.php','wc'],['woocommerce/cart/cart.php','wc'],['woocommerce/checkout/form-checkout.php','wc'],['woocommerce/myaccount/*','wc']] },
+  { n:'Phase 5', t:'Refinement', when:'Optional, and mostly forever',
+    items:[['taxonomy.php',''],['author.php',''],['date.php',''],['page-{slug}.php',''],['rtl.css',''],['theme.json','']] }
+];
+
+const CHAINS = [
+  { id:'front', g:'wp', label:'Homepage', src:'doc', ref:'WP Handbook → Front Page display',
+    note:'The front page template wins over the blog index regardless of the Reading settings.',
+    steps:[
+      ['front-page.php','Used for both “your latest posts” and “a static page” as set in Settings → Reading'],
+      ['home.php','If front-page.php is absent and “your latest posts” is set'],
+      ['page.php','When “a static page” is set as the front page'],
+      ['index.php','When the relevant file above does not exist']
+    ]},
+  { id:'blog', g:'wp', label:'Blog index', src:'doc', ref:'WP Handbook → Home Page display',
+    note:'Renders the blog posts index whether it is the front page or a separate static page. front-page.php overrides it.',
+    steps:[['home.php','The blog posts index'],['index.php','Fallback']]},
+  { id:'single', g:'wp', label:'Single post', src:'doc', ref:'WP Handbook → Single Post',
+    note:'Also the chain a single product follows, because a product is a custom post type.',
+    steps:[
+      ['single-{post-type}-{slug}.php','Since WP 4.4 — e.g. post type product, slug dmc-12 → single-product-dmc-12.php'],
+      ['single-{post-type}.php','E.g. post type product → single-product.php'],
+      ['single.php','Generic single post'],
+      ['singular.php','Shared fallback for single posts and pages'],
+      ['index.php','Final fallback']
+    ]},
+  { id:'page', g:'wp', label:'Page', src:'doc', ref:'WP Handbook → Single Page',
+    note:'Cart, checkout and account are ordinary WordPress pages, so they resolve through this chain.',
+    steps:[
+      ['custom template file','The page template assigned to the page — see get_page_templates()'],
+      ['page-{slug}.php','Page slug recent-news → page-recent-news.php'],
+      ['page-{id}.php','Page ID 6 → page-6.php'],
+      ['page.php','Generic page'],
+      ['singular.php','Shared fallback'],
+      ['index.php','Final fallback']
+    ]},
+  { id:'cat', g:'wp', label:'Category', src:'doc', ref:'WP Handbook → Category',
+    steps:[['category-{slug}.php','Slug news → category-news.php'],['category-{id}.php','ID 6 → category-6.php'],['category.php',''],['archive.php',''],['index.php','']]},
+  { id:'tag', g:'wp', label:'Tag', src:'doc', ref:'WP Handbook → Tag',
+    steps:[['tag-{slug}.php','Slug sometag → tag-sometag.php'],['tag-{id}.php','ID 6 → tag-6.php'],['tag.php',''],['archive.php',''],['index.php','']]},
+  { id:'tax', g:'wp', label:'Custom taxonomy', src:'doc', ref:'WP Handbook → Custom Taxonomies',
+    note:'Product categories and product attributes are custom taxonomies, so they land here.',
+    steps:[
+      ['taxonomy-{taxonomy}-{term}.php','Taxonomy sometax, term someterm → taxonomy-sometax-someterm.php'],
+      ['taxonomy-{taxonomy}.php','→ taxonomy-sometax.php'],
+      ['taxonomy.php',''],['archive.php',''],['index.php','']
+    ]},
+  { id:'cpt', g:'wp', label:'Post-type archive', src:'doc', ref:'WP Handbook → Custom Post Types',
+    note:'This is the rule that makes archive-product.php the shop template.',
+    steps:[['archive-{post_type}.php','Post type product → archive-product.php'],['archive.php',''],['index.php','']]},
+  { id:'author', g:'wp', label:'Author', src:'doc', ref:'WP Handbook → Author display',
+    steps:[['author-{nicename}.php','Nicename matt → author-matt.php'],['author-{id}.php','ID 6 → author-6.php'],['author.php',''],['archive.php',''],['index.php','']]},
+  { id:'date', g:'wp', label:'Date', src:'doc', ref:'WP Handbook → Date',
+    steps:[['date.php',''],['archive.php',''],['index.php','']]},
+  { id:'search', g:'wp', label:'Search', src:'doc', ref:'WP Handbook → Search Result',
+    steps:[['search.php',''],['index.php','']]},
+  { id:'404', g:'wp', label:'404', src:'doc', ref:'WP Handbook → 404 (Not Found)',
+    steps:[['404.php',''],['index.php','']]},
+  { id:'attach', g:'wp', label:'Attachment', src:'doc', ref:'WP Handbook → Attachment',
+    note:'Since WP 6.4 attachment pages are no longer enabled by default on new installs.',
+    steps:[
+      ['{MIME-type}.php','Any MIME type — image.php, video.php, pdf.php. For text/plain: text-plain.php → plain.php → text.php'],
+      ['attachment.php',''],
+      ['single-attachment-{slug}.php','Slug holiday → single-attachment-holiday.php'],
+      ['single-attachment.php',''],['single.php',''],['singular.php',''],['index.php','']
+    ]},
+  { id:'privacy', g:'wp', label:'Privacy policy', src:'doc', ref:'WP Handbook → Privacy Policy Page display',
+    steps:[['privacy-policy.php','The page set in Settings → Privacy'],['custom template file','The assigned page template'],['page-{slug}.php',''],['page-{id}.php',''],['page.php',''],['singular.php',''],['index.php','']]},
+  { id:'embed', g:'wp', label:'Embed', src:'doc', ref:'WP Handbook → Embeds',
+    steps:[['embed-{post-type}-{post_format}.php','Post type post with audio format → embed-post-audio.php'],['embed-{post-type}.php','→ embed-product.php'],['embed.php',''],['wp-includes/theme-compat/embed.php','WordPress’ own fallback, outside the theme']]},
+
+  { id:'shop', g:'wc', label:'Shop page', src:'doc', ref:'WC docs + WP post-type archive rule',
+    note:'The shop is the product post-type archive, so the documented archive-{post_type} rule applies. The WooCommerce docs name archive-product.php directly, and warn that adding woocommerce.php to the theme makes it impossible to override.',
+    steps:[
+      ['woocommerce.php','If present it takes priority over everything below — the docs state this is intended, to prevent display issues'],
+      ['woocommerce/archive-product.php','In your theme — the documented override location'],
+      ['archive-product.php','In the theme root'],
+      ['woocommerce/templates/archive-product.php','The plugin’s own copy'],
+    ]},
+  { id:'product', g:'wc', label:'Single product', src:'doc', ref:'WP Handbook → Single Post (product is a CPT)',
+    note:'The supplied WooCommerce docs never name single-product.php. That it is the file follows from the documented WordPress rule single-{post-type}.php applied to the product post type.',
+    steps:[
+      ['woocommerce.php','Catch-all, if you created one'],
+      ['single-product.php','From the documented single-{post-type}.php rule'],
+      ['single.php','Generic single'],['singular.php',''],['index.php','']
+    ]},
+  { id:'pcat', g:'wc', label:'Product category', src:'doc', ref:'WC docs → custom attributes in menus and archives',
+    note:'The WooCommerce docs name taxonomy-product_cat.php directly and use it as the base to copy when theming an attribute archive.',
+    steps:[
+      ['woocommerce.php','Catch-all, if present'],
+      ['taxonomy-product_cat-{term}.php','From the documented custom-taxonomy rule'],
+      ['woocommerce/taxonomy-product_cat.php','Named in the docs as the file to copy'],
+      ['archive-product.php',''],['archive.php',''],['index.php','']
+    ]},
+  { id:'attr', g:'wc', label:'Attribute archive', src:'doc', ref:'WC docs → Managing custom attributes',
+    note:'Attribute archives must be enabled first. The docs give the exact recipe: copy taxonomy-product_cat.php and rename it for the attribute. Attribute slugs are prefixed pa_.',
+    steps:[
+      ['taxonomy-pa_{attribute}.php','The documented example is taxonomy-pa_size.php for an attribute named size'],
+      ['taxonomy.php',''],['archive.php',''],['index.php','']
+    ]},
+  { id:'cart', g:'wc', label:'Cart / Checkout', src:'doc', ref:'WC docs → Conditional tags',
+    note:'These are not WooCommerce templates at the top level. The docs state plainly that “cart and checkout are standard pages with shortcodes” — which is why is_woocommerce() returns false on them. They resolve through the ordinary page hierarchy; WooCommerce only supplies the markup inside.',
+    steps:[
+      ['page-{slug}.php','e.g. page-cart.php — the page hierarchy applies'],
+      ['page-{id}.php',''],['page.php',''],['singular.php',''],['index.php','']
+    ]},
+  { id:'account', g:'wc', label:'My account', src:'doc', ref:'WC docs → Conditional tags / endpoints',
+    note:'Also an ordinary page. Its sub-views (orders, addresses, order-pay…) are endpoints on that page, which is what is_wc_endpoint_url() tests.',
+    steps:[
+      ['page-{slug}.php','e.g. page-my-account.php'],
+      ['page-{id}.php',''],['page.php',''],['singular.php',''],['index.php','']
+    ]}
+];
+
+const FILES = [
+  /* --- WordPress, documented --- */
+  ['style.css','wp','doc','required','The main stylesheet. Required in all themes, and carries the theme information header.','','Theme header plus a note that real styles live in assets/css/skin-*.css'],
+  ['index.php','wp','doc','required','The main template file, required in all themes. The catch-all used when no more specific template matches.','Fallback for every chain','Blog index with an optional sidebar'],
+  ['functions.php','wp','doc','core','Where the theme adds its own functionality. The handbook advises against a closing ?> tag and shows including other PHP files from it.','Loaded on every request','Bootstrap only — loads 15 modules from inc/'],
+  ['comments.php','wp','doc','required','The comments template, included wherever comments are allowed. Required for the WordPress.org directory; should support threaded comments.','Called by comments_template()','Custom list plus a styled comment form'],
+  ['screenshot.png','wp','doc','core','Visual indicator of the theme in the directory and dashboard. Must not exceed 1200×900px.','',''],
+  ['rtl.css','wp','doc','optional','The right-to-left stylesheet, included automatically when the site language is RTL.','',''],
+  ['header.php','wp','doc','core','Generates the site header. A special-case template partial.','Included by get_header()','Topbar, branding, search, actions, nav, mobile drawer'],
+  ['footer.php','wp','doc','core','Generates the site footer.','Included by get_footer()','Four-column footer driven by Customizer contact settings'],
+  ['sidebar.php','wp','doc','optional','Generates the sidebar.','Included by get_sidebar()','Blog sidebar only — the catalog has its own filter panel'],
+  ['searchform.php','wp','doc','optional','The theme’s search form markup, used by get_search_form().','',"Delegates to template-parts/header/search-form.php"],
+  ['front-page.php','wp','doc','core','Always used as the site front page if it exists, regardless of the Settings → Reading configuration.','Overrides home.php and page.php','Custom homepage: hero, categories, makes, products, advantages, panels'],
+  ['home.php','wp','doc','core','Renders the blog posts index, whether that is the front page or a separate static page.','Overridden by front-page.php','Not present — index.php handles the blog index'],
+  ['singular.php','wp','doc','optional','Used for posts when single.php is not found, or for pages when page.php is not found.','Falls back to index.php','Not present'],
+  ['single.php','wp','doc','core','Used when a visitor requests a single post.','← single-{post-type}.php, → singular.php','Post layout with breadcrumbs and prose styling'],
+  ['single-{post-type}.php','wp','doc','optional','The single template for a custom post type — single-book.php for a post type named book.','Overrides single.php','Not present; WooCommerce supplies the product view'],
+  ['page.php','wp','doc','core','Used when visitors request individual pages.','← page-{slug}.php','Generic page with breadcrumb header'],
+  ['page-{slug}.php','wp','doc','optional','Used for one specific page, e.g. page-about.php for the “about” slug.','Overrides page.php','Not present — page templates are used instead'],
+  ['archive.php','wp','doc','core','Used when visitors request posts by category, author or date. Overridden by more specific templates such as category.php, author.php and date.php.','Fallback for most archives','Post grid with pagination'],
+  ['archive-{post-type}.php','wp','doc','optional','The archive for a custom post type — archive-books.php for a post type named books. Used if present, otherwise archive.php.','This rule is what makes archive-product.php the shop','See woocommerce/archive-product.php'],
+  ['category.php','wp','doc','optional','Used when visitors request posts by category.','← category-{slug}.php, → archive.php','Not present — archive.php covers it'],
+  ['tag.php','wp','doc','optional','Used when visitors request posts by tag.','→ archive.php','Not present'],
+  ['taxonomy.php','wp','doc','optional','Used when a visitor requests a term in a custom taxonomy.','← taxonomy-{taxonomy}.php, → archive.php','Not present — WooCommerce handles product taxonomies'],
+  ['author.php','wp','doc','optional','Used whenever a visitor loads an author page.','→ archive.php','Not present'],
+  ['date.php','wp','doc','optional','Used when posts are requested by date or time.','→ archive.php','Not present'],
+  ['search.php','wp','doc','core','Displays a visitor’s search results.','→ index.php','Non-product search; product searches are routed to the catalog layout'],
+  ['404.php','wp','doc','core','Used when WordPress cannot find content matching the request.','→ index.php','Custom 404 with a product search field and shortcuts'],
+  ['attachment.php','wp','doc','optional','Used when viewing a single attachment — an image, PDF or other media file.','← {MIME-type}.php','Not present'],
+  ['image.php','wp','doc','optional','A more specific version of attachment.php for image attachments. Falls back to attachment.php.','','Not present'],
+  ['privacy-policy.php','wp','doc','optional','Renders the page set in Settings → Privacy. Takes precedence over page.php.','→ page.php → singular.php','Not present'],
+  ['embed.php','wp','doc','optional','Renders a post that is being embedded elsewhere.','← embed-{post-type}.php','Not present'],
+  ['theme.json','wp','doc','optional','Global settings and styles. The handbook presents it as the configuration layer for the editor and global styles.','','Present: palette, type scale and layout widths, with styles pointing at the skin tokens'],
+
+  /* --- WooCommerce, documented --- */
+  ['woocommerce.php','wc','doc','optional','A catch-all: duplicate page.php and replace the loop with woocommerce_content(). Used for all WooCommerce taxonomies and post types. The docs warn that creating it makes woocommerce/archive-product.php impossible to override, and that hooks are preferred.','Takes priority over archive-product.php','Deliberately not created, so the catalog layout stays in control'],
+  ['woocommerce/archive-product.php','wc','doc','core','The product archive — the shop page and product taxonomy archives. Named directly in the WooCommerce docs.','Overrides the plugin copy','Catalog shell: header, filter sidebar, toolbar, product grid'],
+  ['woocommerce/taxonomy-product_cat.php','wc','doc','optional','The product category archive. The docs name this file as the one to copy when theming an attribute archive.','→ archive-product.php','Not overridden — archive-product.php serves category archives'],
+  ['woocommerce/taxonomy-pa_{attribute}.php','wc','doc','optional','An attribute archive. The documented recipe: enable archives, copy taxonomy-product_cat.php, rename for the attribute. Attribute slugs carry a pa_ prefix.','','Not overridden; make and model archives use the catalog layout'],
+  ['woocommerce/emails/admin-new-order.php','wc','doc','optional','The new-order notification email. The docs use this file as the worked example of the override path: drop the /templates/ segment when copying.','','Not overridden'],
+
+  /* --- WooCommerce, project-derived --- */
+  ['woocommerce/content-product.php','wc','prj','core','The product card rendered for each item in a loop. Not named in the supplied documentation.','Rendered inside the product loop','SKU-first card: image, name, article number, compatibility, stock, price, add to cart'],
+  ['woocommerce/content-single-product.php','wc','prj','core','The single product body — gallery column and summary column. Not named in the supplied documentation.','Fires the single-product hook stack','Two-column grid replacing the float layout'],
+  ['woocommerce/loop/loop-start.php','wc','prj','optional','Opens the product loop container.','','Emits the grid <ul> with a column count custom property'],
+  ['woocommerce/loop/loop-end.php','wc','prj','optional','Closes the product loop container.','','Closes the grid'],
+  ['woocommerce/loop/no-products-found.php','wc','prj','optional','The empty state for a product listing.','','Distinguishes “no products here” from “your filters match nothing”'],
+  ['woocommerce/single-product/product-image.php','wc','prj','optional','The product gallery.','Fires woocommerce_product_thumbnails','Custom gallery; the theme does not declare the zoom/lightbox/slider supports, so those scripts never load'],
+  ['woocommerce/single-product/tabs/tabs.php','wc','prj','optional','The description / attributes / reviews tabs.','Reads the woocommerce_product_tabs filter','Real ARIA tablist; all panels visible without JavaScript'],
+  ['woocommerce/single-product/related.php','wc','prj','optional','The related products block.','','Reuses the product card'],
+  ['woocommerce/cart/cart.php','wc','prj','core','The cart contents form.','Fires the cart hook stack','Responsive grid rows: image, name + SKU, price, quantity, line total, remove'],
+  ['woocommerce/cart/cart-totals.php','wc','prj','optional','The cart totals panel.','Fires woocommerce_proceed_to_checkout','Sticky summary panel'],
+  ['woocommerce/cart/cart-empty.php','wc','prj','optional','The empty cart state.','','Points back into the catalog'],
+  ['woocommerce/checkout/form-checkout.php','wc','prj','core','The checkout form shell.','Fires the checkout hook stack','Single page, two columns: details left, sticky summary and payment right'],
+  ['woocommerce/checkout/review-order.php','wc','prj','optional','The order review table inside checkout.','','Line items with quantities'],
+  ['woocommerce/checkout/thankyou.php','wc','prj','optional','The order received page.','','Reads order data through the WC_Order API only, for HPOS compatibility'],
+  ['woocommerce/myaccount/my-account.php','wc','prj','optional','The account area shell.','Fires account navigation and content hooks','Two-column account layout'],
+  ['woocommerce/myaccount/navigation.php','wc','prj','optional','The account menu.','','Icon menu with an active state'],
+  ['woocommerce/myaccount/dashboard.php','wc','prj','optional','The account landing view.','','Cards for orders, addresses and wholesale'],
+  ['woocommerce/myaccount/orders.php','wc','prj','optional','The order history list.','','Order rows read through the WC_Order API'],
+  ['woocommerce/myaccount/form-login.php','wc','prj','optional','Login and registration forms.','','Field names, nonces and hooks match core exactly; only layout differs'],
+  ['woocommerce/notices/error.php','wc','prj','optional','Error notices.','','Themed alert markup'],
+  ['woocommerce/notices/success.php','wc','prj','optional','Success notices, including add-to-cart confirmation.','','Centred confirmation bar'],
+  ['woocommerce/notices/notice.php','wc','prj','optional','Informational notices.','','Themed alert markup']
+];
+
+const HOOKS = [
+  ['woocommerce/archive-product.php',['woocommerce_before_main_content','woocommerce_shop_loop_header','woocommerce_before_shop_loop','woocommerce_shop_loop','woocommerce_after_shop_loop','woocommerce_no_products_found','woocommerce_after_main_content','woocommerce_sidebar']],
+  ['woocommerce/content-product.php',['woocommerce_before_shop_loop_item','woocommerce_before_shop_loop_item_title','woocommerce_shop_loop_item_title','woocommerce_after_shop_loop_item_title','woocommerce_after_shop_loop_item']],
+  ['woocommerce/content-single-product.php',['woocommerce_before_single_product','woocommerce_before_single_product_summary','woocommerce_single_product_summary','woocommerce_after_single_product_summary','woocommerce_after_single_product']],
+  ['woocommerce/single-product/product-image.php',['woocommerce_product_thumbnails']],
+  ['woocommerce/single-product/tabs/tabs.php',['woocommerce_product_tabs (filter)','woocommerce_product_after_tabs']],
+  ['woocommerce/cart/cart.php',['woocommerce_before_cart','woocommerce_before_cart_table','woocommerce_before_cart_contents','woocommerce_cart_contents','woocommerce_after_cart_contents','woocommerce_after_cart_item_name','woocommerce_cart_coupon','woocommerce_cart_actions','woocommerce_after_cart_table','woocommerce_cart_collaterals','woocommerce_after_cart']],
+  ['woocommerce/cart/cart-totals.php',['woocommerce_before_cart_totals','woocommerce_cart_totals_before_shipping','woocommerce_cart_totals_after_shipping','woocommerce_cart_totals_before_order_total','woocommerce_cart_totals_after_order_total','woocommerce_proceed_to_checkout','woocommerce_after_cart_totals']],
+  ['woocommerce/cart/cart-empty.php',['woocommerce_cart_is_empty']],
+  ['woocommerce/checkout/form-checkout.php',['woocommerce_before_checkout_form','woocommerce_checkout_before_customer_details','woocommerce_checkout_billing','woocommerce_checkout_shipping','woocommerce_checkout_after_customer_details','woocommerce_checkout_before_order_review_heading','woocommerce_checkout_before_order_review','woocommerce_checkout_order_review','woocommerce_checkout_after_order_review','woocommerce_after_checkout_form']],
+  ['woocommerce/checkout/review-order.php',['woocommerce_review_order_before_cart_contents','woocommerce_review_order_after_cart_contents','woocommerce_review_order_before_shipping','woocommerce_review_order_after_shipping','woocommerce_review_order_before_order_total','woocommerce_review_order_after_order_total']],
+  ['woocommerce/checkout/thankyou.php',['woocommerce_thankyou_{gateway}','woocommerce_thankyou']],
+  ['woocommerce/myaccount/my-account.php',['woocommerce_account_navigation','woocommerce_account_content']],
+  ['woocommerce/myaccount/navigation.php',['woocommerce_before_account_navigation','woocommerce_after_account_navigation']],
+  ['woocommerce/myaccount/dashboard.php',['woocommerce_account_dashboard']],
+  ['woocommerce/myaccount/orders.php',['woocommerce_before_account_orders','woocommerce_before_account_orders_pagination','woocommerce_after_account_orders']],
+  ['woocommerce/myaccount/form-login.php',['woocommerce_before_customer_login_form','woocommerce_login_form_start','woocommerce_login_form','woocommerce_login_form_end','woocommerce_register_form_tag','woocommerce_register_form_start','woocommerce_register_form','woocommerce_register_form_end','woocommerce_after_customer_login_form']]
+];
+
+/* ------------------------------------------------------------------ *
+ * Render
+ * ------------------------------------------------------------------ */
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const SRC = { doc:['b-doc','Doc'], org:['b-org','Org'], prj:['b-prj','Project'] };
+const badge = k => `<span class="b ${SRC[k][0]}">${SRC[k][1]}</span>`;
+
+/* roadmap */
+$('#phases').innerHTML = PHASES.map(p => `
+  <div class="phase">
+    <div class="phase-h"><b>${esc(p.n)}</b><h3>${esc(p.t)}</h3><span>${esc(p.when)}</span></div>
+    <div class="phase-b">${p.items.map(([n,k]) => `<span class="chip ${k}">${esc(n)}</span>`).join('')}</div>
+  </div>`).join('');
+
+/* hierarchy explorer */
+let active = 'front';
+$('#picker').innerHTML = CHAINS.map(c =>
+  `<button class="pk" data-g="${c.g}" data-id="${c.id}" aria-pressed="${c.id===active}">${esc(c.label)}</button>`).join('');
+
+function drawChain(){
+  const c = CHAINS.find(x => x.id === active);
+  if (!c) return;
+  $('#chainMeta').innerHTML =
+    `<div class="file-h"><span class="fn" style="font-family:var(--serif);font-size:16px;font-weight:600">${esc(c.label)}</span>
+     <span class="b ${c.g==='wp'?'b-wp':'b-wc'}">${c.g==='wp'?'WordPress':'WooCommerce'}</span>${badge(c.src)}</div>
+     <p><b style="color:var(--ink-2)">Source:</b> ${esc(c.ref)}</p>${c.note?`<p>${esc(c.note)}</p>`:''}`;
+  $('#chain').innerHTML = c.steps.map(([f,d]) =>
+    `<li><div><div class="fn">${esc(f)}</div>${d?`<div class="ds">${esc(d)}</div>`:''}</div></li>`).join('');
+  $('#chainFoot').textContent = 'WordPress uses the first file in this list that exists in the theme. A child theme’s copy of any of them beats the parent’s.';
+  document.querySelectorAll('.pk').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.id === active)));
+}
+$('#picker').addEventListener('click', e => {
+  const b = e.target.closest('.pk'); if (!b) return;
+  active = b.dataset.id; drawChain();
+});
+drawChain();
+
+/* file reference */
+const REQ = { required:['b-req','Required'], core:['','Core'], optional:['','Optional'] };
+$('#fileList').innerHTML = FILES.map(([f,own,src,req,purpose,rel,prj]) => `
+  <article class="file" data-own="${own}" data-s="${esc((f+' '+purpose+' '+rel+' '+prj).toLowerCase())}">
+    <div class="file-h">
+      <span class="fn">${esc(f)}</span>
+      <span class="b ${own==='wp'?'b-wp':'b-wc'}">${own==='wp'?'WP':'Woo'}</span>
+      ${req==='required'?'<span class="b b-req">Required</span>':''}
+      ${req==='optional'?'<span class="b" style="background:var(--surface-2);color:var(--faint)">Optional</span>':''}
+      ${badge(src)}
+    </div>
+    <p>${esc(purpose)}</p>
+    ${rel?`<div class="rel"><span><b>Relationship:</b> ${esc(rel)}</span></div>`:''}
+    ${prj?`<div class="prj-row"><span class="b b-prj">DaimZap</span><span>${esc(prj)}</span></div>`:''}
+  </article>`).join('');
+
+/* hooks */
+$('#hookList').innerHTML = HOOKS.map(([f,list]) => `
+  <div class="hk" data-s="${esc((f+' '+list.join(' ')).toLowerCase())}">
+    <h4>${esc(f)}</h4>
+    <ul>${list.map(h => `<li>${esc(h)}</li>`).join('')}</ul>
+  </div>`).join('');
+
+/* filtering */
+function applyFilters(){
+  const q = $('#q').value.trim().toLowerCase();
+  const wp = $('#t-wp').getAttribute('aria-pressed') === 'true';
+  const wc = $('#t-wc').getAttribute('aria-pressed') === 'true';
+  let shown = 0;
+  document.querySelectorAll('.file').forEach(el => {
+    const ownOk = el.dataset.own === 'wp' ? wp : wc;
+    const qOk = !q || el.dataset.s.includes(q);
+    const vis = ownOk && qOk;
+    el.hidden = !vis; if (vis) shown++;
+  });
+  $('#fileCount').textContent = shown + ' of ' + FILES.length + ' files';
+  $('#filesEmpty').hidden = shown > 0;
+
+  let hk = 0;
+  document.querySelectorAll('.hk').forEach(el => {
+    const vis = wc && (!q || el.dataset.s.includes(q));
+    el.hidden = !vis; if (vis) hk++;
+  });
+  $('#hooksEmpty').hidden = hk > 0;
+
+  document.querySelectorAll('.pk').forEach(b => {
+    b.hidden = b.dataset.g === 'wp' ? !wp : !wc;
+  });
+}
+$('#q').addEventListener('input', applyFilters);
+document.addEventListener('keydown', e => {
+  if (e.key === '/' && document.activeElement !== $('#q')) { e.preventDefault(); $('#q').focus(); }
+  if (e.key === 'Escape' && document.activeElement === $('#q')) { $('#q').value = ''; applyFilters(); $('#q').blur(); }
+});
+
+function toggle(id, fn){
+  const b = $(id);
+  b.addEventListener('click', () => {
+    const next = b.getAttribute('aria-pressed') !== 'true';
+    b.setAttribute('aria-pressed', String(next));
+    if (fn) fn(next); else applyFilters();
+  });
+}
+toggle('#t-wp'); toggle('#t-wc');
+toggle('#t-prj', on => document.body.classList.toggle('hide-prj', !on));
+toggle('#t-src', on => document.body.classList.toggle('hide-src', !on));
+
+applyFilters();
+</script>
